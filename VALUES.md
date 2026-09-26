@@ -27,3 +27,7 @@ Le projet est gratuit et open source. Tout professionnel ou toute personne peut 
 Les réponses aux exercices ne sont ni collectées ni évaluées par cette application. Les propositions publiques ne doivent contenir aucune donnée personnelle, clinique, administrative ou confidentielle. Les liens vers des ressources tierces ne valent pas validation de l'ensemble de leurs contenus.
 
 Ces propositions sont **pédagogiques et exploratoires** ; elles ne constituent pas un dispositif thérapeutique, un test psychométrique, une intervention scientifique validée ou un outil de décision sur les droits d'une personne.
+
+## Émotions et interactions graphiques
+
+Le champ visuel ne classe ni émotions ni personnes. La personne peut se contenter de regarder, choisir de ne pas animer, arrêter instantanément, réduire le mouvement ou quitter sans se justifier. Les gestes n'ont aucune signification diagnostique. Une impression d'apaisement éventuelle reste un vécu subjectif, non une efficacité clinique revendiquée.

@@ -41,11 +41,19 @@ Le centre de recherche télécharge un catalogue de **métadonnées scientifique
 
 L'ajout communautaire d'une étude par GitHub Issues est public et facultatif ; **aucun résultat personnel d'analyse, diagnostic, photographie, récit de consultation ou dossier individuel** ne doit être partagé.
 
-## 5. Médias externes
+## 5. Champ de réflexion émotionnelle
+
+La page `champ-emotionnel.html` propose une animation facultative locale. Le mouvement est immobile à l'ouverture, puis ne démarre que sur action explicite. Les coordonnées instantanées du pointeur, le centre, les vitesses, les modes et les particules sont des **états temporaires en mémoire vive**. Il n'existe aucun compte, cookie applicatif, base de données, téléchargement de résultats, envoi analytique ou score émotionnel. Les gestes ne sont pas enregistrés ni envoyés au projet, à Capévol ou au Département.
+
+La page n'utilise ni webcam, ni microphone, ni suivi de la navigation. Fermer l'onglet supprime l'état de l'application. Les traitements techniques indépendants de l'hébergement GitHub Pages ne sont pas contrôlés par le code du champ et restent couverts par les dispositions générales ci-dessus.
+
+Il s'agit d'un dispositif graphique exploratoire. Un mouvement choisi ne permet aucune conclusion sur la personne et aucune efficacité thérapeutique n'est revendiquée. Voir [le cahier de conception](CHAMP_EMOTIONNEL_DESIGN.md).
+
+## 6. Médias externes
 
 Les vidéos sont proposées **par des liens** ; aucun lecteur YouTube ou autre lecteur tiers n'est chargé sans action de l'utilisateur. En ouvrant un lien, le visiteur quitte ce site et relève des conditions du service externe.
 
-## 6. Réclamation et aide officielle
+## 7. Réclamation et aide officielle
 
 La CNIL explique les droits et les possibilités de réclamation : https://www.cnil.fr/fr/mes-demarches
 

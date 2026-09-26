@@ -41,3 +41,7 @@ La page `recherche.html` est alimentée par `data/recherche.json`. Le [protocole
 Une étude contradictoire ou un résultat non significatif est une contribution valable. Les vidéos, podcasts et communiqués institutionnels sont des ressources complémentaires : ils ne se substituent pas à une publication scientifique vérifiable. Une thèse de coaching ou une publicité ne reçoit pas le statut d'étude par simple répétition.
 
 Ne publier aucune donnée de santé personnelle, questionnaire rempli ou cas réel d'allocataire. Les propositions concernent exclusivement des études déjà publiques et des descriptions factuelles.
+
+## Contribuer au champ visuel
+
+Toute proposition doit préserver la liberté d'interrompre le mouvement, l'accès au clavier, la lisibilité des commandes, la réduction du mouvement demandée par le système et l'absence d'enregistrement des gestes. Des améliorations visuelles ne doivent jamais introduire une analyse de la personne, une inférence de ses émotions, un formulaire personnel ou une transmission de ses interactions. Les tests existants doivent rester exécutables avec Node.js sans service externe.

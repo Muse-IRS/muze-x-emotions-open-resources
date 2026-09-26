@@ -21,6 +21,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify interactive field
+        run: |
+          node --check assets/champ-physics.mjs
+          node --check assets/champ-emotionnel.mjs
+          node --test tests/champ-emotionnel.test.mjs
       - name: Check publication boundary
         run: python3 scripts/validate_public.py
       - name: Configure Pages

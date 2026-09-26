@@ -2,7 +2,7 @@
 
 **Une ressource pédagogique gratuite, open source et autonome**, destinée aux professionnels de la formation et de l'accompagnement, et librement consultable par toute personne intéressée.
 
-**Site public :** https://muse-irs.github.io/muze-x-emotions-open-resources/ · **Atlas des émotions :** https://muse-irs.github.io/muze-x-emotions-open-resources/pensees.html · **Centre de recherche :** https://muse-irs.github.io/muze-x-emotions-open-resources/recherche.html
+**Site public :** https://muse-irs.github.io/muze-x-emotions-open-resources/ · **Atlas des émotions :** https://muse-irs.github.io/muze-x-emotions-open-resources/pensees.html · **Centre de recherche :** https://muse-irs.github.io/muze-x-emotions-open-resources/recherche.html · **Champ visuel :** https://muse-irs.github.io/muze-x-emotions-open-resources/champ-emotionnel.html
 
 ## Pourquoi ce projet ?
 
@@ -29,6 +29,21 @@ La page [Recherche : cerveau, émotions et pratiques](recherche.html) propose un
 Son [catalogue de recherche structuré](data/recherche.json) enregistre auteurs ou organismes, établissement au moment de la publication, titre, année, type de méthode, population étudiée, résultats, limites et lien vers l'article ou la synthèse d'origine. Les liens vers les travaux de tiers n'autorisent pas à recopier leurs textes ou leurs figures.
 
 L'examen des études suit notre [charte de recherche publique](RESEARCH_POLICY.md). Une corrélation ne prouve pas la causalité ; un résultat d'IRM n'est pas un résultat clinique ; une étude courte ou spécifique ne justifie pas une recommandation universelle. Aucun score psychologique ni pratique obligatoire. La page n'est pas une consultation médicale.
+
+## Champ de réflexion émotionnelle — extension 0.4
+
+La page [Champ de réflexion émotionnelle](champ-emotionnel.html) propose une expérience visuelle libre : **un rectangle, un cercle mobile et deux essaims**. Les modes attraction, vortex et dispersion sont de simples mouvements graphiques, pas des catégories de personnes ou des diagnostics.
+
+L'animation **ne démarre jamais automatiquement**. La personne peut choisir le mouvement, déplacer le centre au doigt, à la souris ou au clavier, régler vitesse, intensité et nombre de particules, ralentir, aérer, recentrer, mettre en pause ou réinitialiser. La préférence système de réduction du mouvement est respectée, et tout passage en arrière-plan met l'animation en pause.
+
+Tout fonctionne en JavaScript local avec Canvas 2D, **sans aucun compte, suivi, collecte des gestes, stockage de session, microphone, caméra ou service tiers**. Le serveur GitHub Pages possède ses propres traitements techniques, décrits séparément dans notre notice. Les personnes peuvent également se contenter des descriptions textuelles sans lancer l'animation.
+
+- [Cahier de conception public et critères d'acceptation](CHAMP_EMOTIONNEL_DESIGN.md)
+- [Code autonome du champ et des interactions](assets/champ-emotionnel.mjs)
+- [Règles graphiques minimales et indépendantes](assets/champ-physics.mjs)
+- [Tests de logique et de robustesse numérique](tests/champ-emotionnel.test.mjs)
+
+**Frontière scientifique :** cette page est un support de réflexion et de décompression visuelle exploratoire, sans efficacité thérapeutique revendiquée et sans inférence sur les émotions ou la santé des visiteurs. Il ne remplace pas une aide humaine, sociale ou médicale.
 
 ## Fonctionnalités de la première version
 
@@ -79,4 +94,4 @@ Ce dépôt public est **autonome**. Il ne duplique aucun dépôt privé, aucun d
 
 ## État du projet
 
-**Version 0.3.0 — démonstrateur pédagogique, atlas philosophique et centre de recherche public.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.
+**Version 0.4.0 — démonstrateur pédagogique, atlas philosophique, centre de recherche et champ visuel autonome.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.

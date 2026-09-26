@@ -11,6 +11,9 @@ REQUIRED = [
     "index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html", "assets/styles.css",
     "assets/pensees.css", "assets/pensees.js", "data/pensees.json",
     "assets/recherche.css", "assets/recherche.js", "data/recherche.json", "RESEARCH_POLICY.md",
+    "champ-emotionnel.html", "assets/champ-emotionnel.css",
+    "assets/champ-emotionnel.mjs", "assets/champ-physics.mjs",
+    "tests/champ-emotionnel.test.mjs", "CHAMP_EMOTIONNEL_DESIGN.md",
     "assets/app.js", "data/resources.json", ".nojekyll",
     ".github/ISSUE_TEMPLATE/proposer-ressource.yml",
 ]
@@ -35,7 +38,7 @@ class PublicHTML(HTMLParser):
         if tag == "a":
             self.links.append(a.get("href", ""))
 
-for page in ("index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html"):
+for page in ("index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html", "champ-emotionnel.html"):
     text = Path(page).read_text(encoding="utf-8")
     parser = PublicHTML()
     parser.feed(text)
@@ -92,4 +95,23 @@ for practice in practices:
     assert {"id", "title", "description", "whatWeKnow", "tryExample", "cautions", "studyRefs"} <= practice.keys()
     assert practice["studyRefs"] and all(ref in study_ids for ref in practice["studyRefs"])
     assert practice["cautions"].strip()
-print(f"Validation OK: {len(REQUIRED)} files, 5 HTML pages, {len(thought_entries)} atlas entries, {len(studies)} scientific references, {len(practices)} optional practices.")
+# Champ interactif : la page et le contrôleur doivent exposer des contrôles explicites,
+# l'état local non persistant et le support d'un arrêt immédiat.
+field = Path("champ-emotionnel.html").read_text(encoding="utf-8")
+controller = Path("assets/champ-emotionnel.mjs").read_text(encoding="utf-8")
+engine = Path("assets/champ-physics.mjs").read_text(encoding="utf-8")
+for element_id in ("champ-canvas", "champ-play", "champ-reset", "champ-speed",
+                   "champ-intensity", "champ-density", "champ-slow", "champ-air",
+                   "champ-recenter", "champ-status"):
+    assert 'id="' + element_id + '"' in field, "Missing accessible field control: " + element_id
+for mode in ("attraction", "vortex", "dispersion"):
+    assert 'data-mode="' + mode + '"' in field
+    assert '"' + mode + '"' in engine
+assert 'type="module"' in field
+assert 'aria-pressed' in field and 'tabindex="0"' in field
+assert "document.hidden" in controller and "prefers-reduced-motion" in controller
+assert "requestAnimationFrame" in controller and "cancelAnimationFrame" in controller
+for forbidden in ("fetch(", "localStorage", "sessionStorage", "sendBeacon", "XMLHttpRequest",
+                  "navigator.geolocation", "getUserMedia"):
+    assert forbidden not in controller and forbidden not in engine, "Privacy boundary violation: " + forbidden
+print(f"Validation OK: {len(REQUIRED)} files, 6 HTML pages, {len(thought_entries)} atlas entries, {len(studies)} scientific references, {len(practices)} optional practices, interactive field privacy checks.")

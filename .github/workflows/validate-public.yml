@@ -18,5 +18,8 @@ jobs:
           node --check assets/app.js
           node --check assets/pensees.js
           node --check assets/recherche.js
+          node --check assets/champ-physics.mjs
+          node --check assets/champ-emotionnel.mjs
+          node --test tests/champ-emotionnel.test.mjs
       - name: Validate public files and privacy boundary
         run: python3 scripts/validate_public.py
