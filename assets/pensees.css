@@ -1,0 +1,20 @@
+.atlas-hero{background:linear-gradient(120deg,#143a37,#206451);color:#fff;padding-block:5rem}
+.atlas-hero .eyebrow{color:#daead0}.atlas-hero h1{max-width:900px}.atlas-hero h1 em{font-style:normal;color:#e1eab3}
+.atlas-hero .intro{color:#e4f0e8;max-width:850px}
+.atlas-section{background:#e9f4ec;border-block:1px solid var(--line)}
+.question-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.question-grid button{background:#fff;color:var(--ink);font-weight:750;text-align:left;padding:1.1rem;border:1px solid var(--line);border-radius:12px;cursor:pointer;min-height:100px}
+.question-grid button:hover,.question-grid button[aria-pressed=true]{background:#d6eed8;border-color:#267a55}
+.atlas-controls{display:grid;grid-template-columns:2fr 1fr 1fr auto;align-items:end;gap:1rem;margin:2rem 0 1rem}
+.atlas-controls .field{min-width:0}.atlas-controls .button{min-height:46px}
+.atlas-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.1rem;margin:1.5rem 0 2rem}
+.atlas-card{border:1px solid var(--line);background:#fff;padding:1.35rem;border-radius:var(--radius);display:flex;flex-direction:column;gap:.65rem}
+.atlas-card .tag{align-self:start;margin:0}.atlas-card h3,.atlas-card p{margin:0}
+.atlas-card .question{font-weight:750;color:var(--ink)}.atlas-card p{color:var(--muted)}
+.atlas-card details{margin-top:.3rem}.atlas-card summary{font-weight:750;color:var(--green);cursor:pointer}
+.atlas-card details p{padding-top:.65rem}.atlas-card a{font-weight:750;margin-top:auto;padding-top:1rem}
+.atlas-card .source-kind{color:var(--muted);font-size:.79rem}
+.atlas-note{margin-top:1.1rem}
+@media(max-width:950px){.question-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.atlas-hero{padding-block:3rem}.question-grid,.atlas-controls{grid-template-columns:1fr}.question-grid button{min-height:70px}}
+@media print{.top,.footer,.atlas-hero,.question-grid,.atlas-controls,.atlas-section{display:none!important}}
