@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "verified_on": "2026-09-26",
+  "note": "Catalogue de métadonnées et liens, non reproduction ni validation intégrale de sources externes. Les médias externes ne sont jamais chargés automatiquement.",
+  "resources": [
+    {
+      "id": "santepublique-cps",
+      "kind": "reference",
+      "title": "Compétences psychosociales — ressources et référentiels",
+      "creator": "Santé publique France",
+      "url": "https://www.santepubliquefrance.fr/competences-psychosociales",
+      "language": "fr",
+      "topics": [
+        "émotions",
+        "formation",
+        "compétences psychosociales"
+      ],
+      "description": "Portail officiel de référentiels, fiches et ressources sur les compétences psychosociales cognitives, émotionnelles et sociales.",
+      "rights": "Lien vers le site source ; les documents conservent leurs propres droits.",
+      "status": "SOURCE_EXTERNE"
+    },
+    {
+      "id": "spf-fiches-cps",
+      "kind": "fiche",
+      "title": "Fiches synthétiques : compétences psychosociales",
+      "creator": "Santé publique France",
+      "url": "https://www.santepubliquefrance.fr/competences-psychosociales/fiches-synthetiques-sur-les-competences-psychosociales-cognitives-emotionnelles-et-sociales",
+      "language": "fr",
+      "topics": [
+        "émotions",
+        "fiches",
+        "formation"
+      ],
+      "description": "Fiches officielles à consulter à la source ; vérifier les conditions de réutilisation avant toute reproduction.",
+      "rights": "Lien uniquement ; aucun document tiers reproduit.",
+      "status": "SOURCE_EXTERNE"
+    },
+    {
+      "id": "cnil-droits",
+      "kind": "reference",
+      "title": "Les droits pour maîtriser vos données personnelles",
+      "creator": "CNIL",
+      "url": "https://www.cnil.fr/fr/mes-demarches/les-droits-pour-maitriser-vos-donnees-personnelles",
+      "language": "fr",
+      "topics": [
+        "vie privée",
+        "droits aux données"
+      ],
+      "description": "Informations sur l'accès, la rectification, l'effacement, l'opposition et les autres droits applicables.",
+      "rights": "Lien vers le site officiel.",
+      "status": "SOURCE_EXTERNE"
+    }
+  ]
+}

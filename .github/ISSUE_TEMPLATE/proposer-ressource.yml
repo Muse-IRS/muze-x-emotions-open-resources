@@ -1,0 +1,61 @@
+name: Proposer une ressource publique
+description: Suggérer un lien public vers une vidéo, un article, une fiche ou un cours. Ne transmettez aucune donnée personnelle.
+title: "[Ressource] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Formulaire public.** Tout contenu soumis sera visible sur Internet, associé à votre compte GitHub. Ne renseignez aucune donnée personnelle, confidentielle, médicale ou relative à un allocataire RSA ; aucun témoignage de bénéficiaire.
+  - type: input
+    id: title
+    attributes:
+      label: Titre de la ressource
+      placeholder: Titre tel que publié à la source
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: URL de la source originale
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: creator
+    attributes:
+      label: Auteur ou organisme public
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Catégorie
+      options:
+        - Vidéo
+        - Podcast
+        - Article
+        - Fiche
+        - Cours
+        - Autre
+    validations:
+      required: true
+  - type: textarea
+    id: educational
+    attributes:
+      label: Apport pédagogique
+      description: Décrivez le contenu publié et son utilité de façon factuelle, sans exemple personnel.
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Conditions d'accès et de réutilisation
+      description: Lien libre, payant, licence connue ou information à vérifier. Aucun fichier média.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Données personnelles et droits
+      options:
+        - label: Je confirme que cette proposition ne contient aucune donnée personnelle ou confidentielle d'un tiers et que je propose un lien, pas une copie non autorisée.
+          required: true
