@@ -1,0 +1,596 @@
+{
+  "version": "0.2.0",
+  "date": "2026-09-26",
+  "scope": "Introduction évolutive et non exhaustive. Sources anciennes, synthèses académiques et approches cliniques doivent rester distinctes.",
+  "entries": [
+    {
+      "id": "ptahhotep",
+      "title": "Ptahhotep et les conseils de sagesse",
+      "region": "Égypte",
+      "period": "Antiquité",
+      "family": "Textes anciens",
+      "topics": [
+        "colère",
+        "relations",
+        "justice"
+      ],
+      "question": "Comment répondre à la colère d'autrui ?",
+      "summary": "Écoute, paroles et maîtrise de sa conduite dans un cadre de sagesse égyptienne.",
+      "limit": "Texte traditionnel transmis par des copies ultérieures : ne pas projeter une thérapie moderne.",
+      "source": {
+        "title": "UCL — Teaching of Ptahhotep",
+        "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/literature/ptahhotep.html"
+      }
+    },
+    {
+      "id": "gilgamesh",
+      "title": "Gilgamesh et Enkidu",
+      "region": "Mésopotamie",
+      "period": "Antiquité",
+      "family": "Récits et sagesses",
+      "topics": [
+        "deuil",
+        "amitié",
+        "peur"
+      ],
+      "question": "Comment parler de la perte d'un proche ?",
+      "summary": "L'épopée aborde l'amitié, le deuil et la quête de sens face à la mortalité.",
+      "limit": "Récit littéraire aux versions multiples, non théorie psychologique.",
+      "source": {
+        "title": "British Museum — Epic of Gilgamesh",
+        "url": "https://www.britishmuseum.org/collection/object/W_K-231"
+      }
+    },
+    {
+      "id": "bouddha",
+      "title": "Enseignements bouddhiques anciens",
+      "region": "Inde",
+      "period": "Antiquité",
+      "family": "Philosophies d'Asie",
+      "topics": [
+        "attachement",
+        "désir",
+        "peur"
+      ],
+      "question": "Que change l'acceptation de l'impermanence ?",
+      "summary": "Les traditions bouddhiques anciennes interrogent la souffrance et certaines formes d'attachement.",
+      "limit": "Préserver la diversité des écoles et le cadre spirituel d'origine.",
+      "source": {
+        "title": "Stanford — Buddha",
+        "url": "https://plato.stanford.edu/entries/buddha/"
+      }
+    },
+    {
+      "id": "confucius",
+      "title": "Confucius et les relations humaines",
+      "region": "Chine",
+      "period": "Antiquité",
+      "family": "Philosophies d'Asie",
+      "topics": [
+        "relations",
+        "justice",
+        "émotions"
+      ],
+      "question": "Pourquoi les relations influencent-elles nos réactions ?",
+      "summary": "La tradition confucéenne lie sentiments, rites, apprentissage et vie commune.",
+      "limit": "Source de synthèse sur plusieurs écoles : attribution individuelle à préciser.",
+      "source": {
+        "title": "Stanford — Emotions in Early Chinese Philosophy",
+        "url": "https://plato.stanford.edu/entries/emotions-chinese/"
+      }
+    },
+    {
+      "id": "mencius",
+      "title": "Mencius : les pousses de compassion",
+      "region": "Chine",
+      "period": "Antiquité",
+      "family": "Philosophies d'Asie",
+      "topics": [
+        "compassion",
+        "relations",
+        "justice"
+      ],
+      "question": "Une émotion peut-elle être cultivée ?",
+      "summary": "Mencius décrit des dispositions morales en germe, comme la compassion, qui peuvent se développer.",
+      "limit": "Thèse morale ancienne, non propriété biologique prouvée.",
+      "source": {
+        "title": "Stanford — Emotions in Early Chinese Philosophy",
+        "url": "https://plato.stanford.edu/entries/emotions-chinese/"
+      }
+    },
+    {
+      "id": "xunzi",
+      "title": "Xunzi : formation des dispositions",
+      "region": "Chine",
+      "period": "Antiquité",
+      "family": "Philosophies d'Asie",
+      "topics": [
+        "colère",
+        "relations",
+        "justice"
+      ],
+      "question": "Comment l'apprentissage change-t-il nos habitudes ?",
+      "summary": "Xunzi met l'accent sur la formation des comportements et des émotions par l'éducation.",
+      "limit": "Ne pas réduire ses désaccords avec Mencius à un slogan.",
+      "source": {
+        "title": "Stanford — Emotions in Early Chinese Philosophy",
+        "url": "https://plato.stanford.edu/entries/emotions-chinese/"
+      }
+    },
+    {
+      "id": "zhuangzi",
+      "title": "Zhuangzi : changer de perspective",
+      "region": "Chine",
+      "period": "Antiquité",
+      "family": "Philosophies d'Asie",
+      "topics": [
+        "doute",
+        "attachement",
+        "liberté"
+      ],
+      "question": "Et si plusieurs interprétations étaient possibles ?",
+      "summary": "Ses récits interrogent les classements figés et les perspectives changeantes.",
+      "limit": "Œuvre plurielle ; non manuel contemporain de lâcher-prise.",
+      "source": {
+        "title": "Stanford — Zhuangzi",
+        "url": "https://plato.stanford.edu/entries/zhuangzi/"
+      }
+    },
+    {
+      "id": "heraclite",
+      "title": "Héraclite : changements et tensions",
+      "region": "Grèce",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "doute",
+        "attachement",
+        "émotions"
+      ],
+      "question": "Comment vivre dans le changement ?",
+      "summary": "Les fragments attribués à Héraclite interrogent le devenir et les oppositions.",
+      "limit": "Fragments et traductions discutés ; éviter les fausses citations.",
+      "source": {
+        "title": "Stanford — Heraclitus",
+        "url": "https://plato.stanford.edu/entries/heraclitus/"
+      }
+    },
+    {
+      "id": "platon",
+      "title": "Socrate et Platon : raison et désirs",
+      "region": "Grèce",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "désir",
+        "colère",
+        "justice"
+      ],
+      "question": "Pourquoi nos aspirations peuvent-elles s'opposer ?",
+      "summary": "Les dialogues platoniciens explorent les tensions entre raison, désir et énergie combative.",
+      "limit": "Les dialogues ne sont pas une théorie clinique des émotions.",
+      "source": {
+        "title": "Stanford — Ancient Ethical Theory",
+        "url": "https://plato.stanford.edu/entries/ethics-ancient/"
+      }
+    },
+    {
+      "id": "aristote",
+      "title": "Aristote : émotion et circonstances",
+      "region": "Grèce",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "colère",
+        "justice",
+        "relations"
+      ],
+      "question": "Une colère peut-elle être ajustée à la situation ?",
+      "summary": "Son éthique examine habitudes, dispositions, délibération et contexte de l'action.",
+      "limit": "Une réflexion morale ne permet pas de juger l'émotion d'une personne.",
+      "source": {
+        "title": "Stanford — Aristotle’s Ethics",
+        "url": "https://plato.stanford.edu/entries/aristotle-ethics/"
+      }
+    },
+    {
+      "id": "diogene",
+      "title": "Diogène de Sinope et le cynisme",
+      "region": "Grèce",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "désir",
+        "attachement",
+        "liberté"
+      ],
+      "question": "De quoi avons-nous réellement besoin ?",
+      "summary": "Le cynisme ancien remet en question conventions et dépendances superflues.",
+      "limit": "Récits tardifs parfois légendaires ; préserver les contraintes matérielles réelles.",
+      "source": {
+        "title": "Stanford — Ancient Ethical Theory",
+        "url": "https://plato.stanford.edu/entries/ethics-ancient/"
+      }
+    },
+    {
+      "id": "epicure",
+      "title": "Épicure : amitié, plaisir et crainte",
+      "region": "Grèce",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "peur",
+        "désir",
+        "amitié"
+      ],
+      "question": "Comment distinguer besoins et désirs sans fin ?",
+      "summary": "L'épicurisme interroge le plaisir, l'amitié et la peur de la mort.",
+      "limit": "Ne pas confondre épicurisme et recherche illimitée de plaisirs.",
+      "source": {
+        "title": "Stanford — Epicurus",
+        "url": "https://plato.stanford.edu/entries/epicurus/"
+      }
+    },
+    {
+      "id": "stoiques",
+      "title": "Zénon, Chrysippe et le stoïcisme",
+      "region": "Grèce et Rome",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "peur",
+        "colère",
+        "liberté"
+      ],
+      "question": "Quels jugements accompagnent une émotion ?",
+      "summary": "L'école stoïcienne examine les passions, le jugement, le choix et la vertu.",
+      "limit": "Les premiers textes sont fragmentaires ; l'école contient des débats.",
+      "source": {
+        "title": "Stanford — Stoicism",
+        "url": "https://plato.stanford.edu/entries/stoicism/"
+      }
+    },
+    {
+      "id": "rome",
+      "title": "Sénèque, Épictète et Marc Aurèle",
+      "region": "Rome",
+      "period": "Antiquité",
+      "family": "Philosophie antique",
+      "topics": [
+        "peur",
+        "colère",
+        "justice"
+      ],
+      "question": "Sur quoi pouvons-nous réellement agir ?",
+      "summary": "Trois auteurs stoïciens romains éclairent l'action face aux événements incertains.",
+      "limit": "Ne pas réduire le stoïcisme à une injonction de ne rien ressentir.",
+      "source": {
+        "title": "Stanford — Stoicism",
+        "url": "https://plato.stanford.edu/entries/stoicism/"
+      }
+    },
+    {
+      "id": "augustin",
+      "title": "Augustin : amour et volonté",
+      "region": "Afrique du Nord et Europe",
+      "period": "Moyen Âge",
+      "family": "Philosophies médiévales",
+      "topics": [
+        "désir",
+        "attachement",
+        "relations"
+      ],
+      "question": "Que disent nos attachements de nos priorités ?",
+      "summary": "Les traditions augustiniennes interrogent la volonté, les affects et l'amour.",
+      "limit": "Cadre théologique distinct de la psychologie contemporaine.",
+      "source": {
+        "title": "Stanford — Medieval Theories of the Emotions",
+        "url": "https://plato.stanford.edu/entries/medieval-emotions/"
+      }
+    },
+    {
+      "id": "avicenne",
+      "title": "Avicenne : perception et passions",
+      "region": "Monde persan",
+      "period": "Moyen Âge",
+      "family": "Philosophies médiévales",
+      "topics": [
+        "corps",
+        "peur",
+        "émotions"
+      ],
+      "question": "Comment liait-on perception, corps et passions ?",
+      "summary": "La psychologie des facultés d'Avicenne influence les débats médiévaux.",
+      "limit": "Source de synthèse ; édition spécifique de ses œuvres à ajouter.",
+      "source": {
+        "title": "Stanford — Medieval Theories of the Emotions",
+        "url": "https://plato.stanford.edu/entries/medieval-emotions/"
+      }
+    },
+    {
+      "id": "aquin",
+      "title": "Thomas d'Aquin et les passions",
+      "region": "Europe",
+      "period": "Moyen Âge",
+      "family": "Philosophies médiévales",
+      "topics": [
+        "colère",
+        "désir",
+        "justice"
+      ],
+      "question": "Comment les passions et la volonté interagissent-elles ?",
+      "summary": "La scolastique élabore des distinctions entre passions, volonté et vertu.",
+      "limit": "Taxonomies historiques, non diagnostic psychologique.",
+      "source": {
+        "title": "Stanford — Medieval Theories of the Emotions",
+        "url": "https://plato.stanford.edu/entries/medieval-emotions/"
+      }
+    },
+    {
+      "id": "montaigne",
+      "title": "Montaigne : expériences et incertitudes",
+      "region": "Europe",
+      "period": "Époque moderne",
+      "family": "Philosophie moderne",
+      "topics": [
+        "doute",
+        "peur",
+        "liberté"
+      ],
+      "question": "Peut-on reconnaître les limites de son jugement ?",
+      "summary": "Les Essais explorent diversité des expériences et variations des opinions.",
+      "limit": "Source historique générale ; analyse textuelle particulière à compléter.",
+      "source": {
+        "title": "Stanford — Early Modern Theories of Emotions",
+        "url": "https://plato.stanford.edu/entries/emotions-17th18th/"
+      }
+    },
+    {
+      "id": "descartes",
+      "title": "Descartes : passions de l'âme",
+      "region": "Europe",
+      "period": "Époque moderne",
+      "family": "Philosophie moderne",
+      "topics": [
+        "corps",
+        "peur",
+        "désir"
+      ],
+      "question": "Quel rapport entre émotions et sensations corporelles ?",
+      "summary": "Descartes développe une théorie philosophique des passions et du corps.",
+      "limit": "Sa physiologie ancienne n'est pas celle des neurosciences.",
+      "source": {
+        "title": "Stanford — René Descartes",
+        "url": "https://plato.stanford.edu/entries/descartes/"
+      }
+    },
+    {
+      "id": "spinoza",
+      "title": "Spinoza : affects et puissance d'agir",
+      "region": "Europe",
+      "period": "Époque moderne",
+      "family": "Philosophie moderne",
+      "topics": [
+        "désir",
+        "joie",
+        "liberté"
+      ],
+      "question": "Comprendre un affect transforme-t-il nos possibilités ?",
+      "summary": "Les affects et leurs causes jouent un rôle central dans sa philosophie.",
+      "limit": "La puissance d'agir n'est pas une mesure de productivité ou de santé.",
+      "source": {
+        "title": "Stanford — Baruch Spinoza",
+        "url": "https://plato.stanford.edu/entries/spinoza/"
+      }
+    },
+    {
+      "id": "hume",
+      "title": "Hume : passions et sympathie",
+      "region": "Europe",
+      "period": "Époque moderne",
+      "family": "Philosophie moderne",
+      "topics": [
+        "relations",
+        "désir",
+        "justice"
+      ],
+      "question": "Quelle place donner à la sympathie ?",
+      "summary": "Hume interroge le rôle des passions et de la sympathie dans les jugements.",
+      "limit": "Source générale de période ; références à ses œuvres à compléter.",
+      "source": {
+        "title": "Stanford — Early Modern Theories of Emotions",
+        "url": "https://plato.stanford.edu/entries/emotions-17th18th/"
+      }
+    },
+    {
+      "id": "musashi",
+      "title": "Miyamoto Musashi : pratique et adaptation",
+      "region": "Japon",
+      "period": "Époque moderne",
+      "family": "Philosophies d'Asie",
+      "topics": [
+        "peur",
+        "doute",
+        "action"
+      ],
+      "question": "Quand faut-il adapter une stratégie ?",
+      "summary": "Le Livre des cinq anneaux relève de la stratégie martiale et de la pratique.",
+      "limit": "Ni thérapie, ni validation d'un modèle contemporain du mental.",
+      "source": {
+        "title": "Musée préfectoral d'Okayama — Miyamoto Musashi",
+        "url": "https://jmapps.ne.jp/okayamakenbi/det.html?data_id=2592"
+      }
+    },
+    {
+      "id": "kierkegaard",
+      "title": "Kierkegaard : l'angoisse du choix",
+      "region": "Europe",
+      "period": "XIXe–XXe siècles",
+      "family": "Philosophie moderne",
+      "topics": [
+        "peur",
+        "doute",
+        "liberté"
+      ],
+      "question": "Pourquoi la liberté de choisir inquiète-t-elle ?",
+      "summary": "L'œuvre réfléchit à l'angoisse, aux possibilités et à l'existence.",
+      "limit": "L'angoisse philosophique n'est pas un diagnostic médical.",
+      "source": {
+        "title": "Stanford — Søren Kierkegaard",
+        "url": "https://plato.stanford.edu/entries/kierkegaard/"
+      }
+    },
+    {
+      "id": "nietzsche",
+      "title": "Nietzsche : affects et valeurs",
+      "region": "Europe",
+      "period": "XIXe–XXe siècles",
+      "family": "Philosophie moderne",
+      "topics": [
+        "colère",
+        "désir",
+        "liberté"
+      ],
+      "question": "Nos affects contribuent-ils à former nos valeurs ?",
+      "summary": "Nietzsche étudie les affects, les pulsions et les évaluations.",
+      "limit": "Éviter citations apocryphes et slogans de motivation.",
+      "source": {
+        "title": "Stanford — Friedrich Nietzsche",
+        "url": "https://plato.stanford.edu/entries/nietzsche/"
+      }
+    },
+    {
+      "id": "james",
+      "title": "William James : les réactions corporelles",
+      "region": "Amérique du Nord",
+      "period": "XIXe–XXe siècles",
+      "family": "Psychologie scientifique",
+      "topics": [
+        "corps",
+        "peur",
+        "émotions"
+      ],
+      "question": "Quel rôle joue le corps dans ce que nous ressentons ?",
+      "summary": "La théorie James–Lange situe les sensations corporelles au centre de l'émotion.",
+      "limit": "Théorie historique, débattue et non exhaustive.",
+      "source": {
+        "title": "Stanford — Emotion",
+        "url": "https://plato.stanford.edu/entries/emotion/"
+      }
+    },
+    {
+      "id": "freud",
+      "title": "Sigmund Freud et la psychanalyse",
+      "region": "Europe",
+      "period": "XIXe–XXe siècles",
+      "family": "Psychanalyse et psychiatrie",
+      "topics": [
+        "désir",
+        "peur",
+        "attachement"
+      ],
+      "question": "Pourquoi certaines réactions nous surprennent-elles ?",
+      "summary": "Freud examine conflits psychiques, refoulement et inconscient dans son système psychanalytique.",
+      "limit": "Influence historique ne vaut pas validation empirique de chaque concept.",
+      "source": {
+        "title": "Freud Museum London — Who was Sigmund Freud?",
+        "url": "https://www.freud.org.uk/schools/resources/who-was-sigmund-freud/"
+      }
+    },
+    {
+      "id": "annafreud",
+      "title": "Anna Freud et les mécanismes de défense",
+      "region": "Europe",
+      "period": "XIXe–XXe siècles",
+      "family": "Psychanalyse et psychiatrie",
+      "topics": [
+        "peur",
+        "attachement",
+        "relations"
+      ],
+      "question": "Comment a-t-on décrit certaines réactions défensives ?",
+      "summary": "Anna Freud développe notamment des travaux de psychanalyse de l'enfant.",
+      "limit": "Ne pas interpréter cliniquement le comportement d'un lecteur.",
+      "source": {
+        "title": "Freud Museum London — Anna Freud’s Story",
+        "url": "https://www.freud.org.uk/about-us/the-house/anna-freuds-story/"
+      }
+    },
+    {
+      "id": "jung",
+      "title": "Carl Gustav Jung : psychologie analytique",
+      "region": "Europe",
+      "period": "XIXe–XXe siècles",
+      "family": "Psychanalyse et psychiatrie",
+      "topics": [
+        "attachement",
+        "identité",
+        "doute"
+      ],
+      "question": "Comment envisager ce qui reste peu conscient ?",
+      "summary": "La psychologie analytique comprend les notions d'ombre et de processus d'individuation.",
+      "limit": "Présentation de l'institut jungien ; validation scientifique distincte et discutée.",
+      "source": {
+        "title": "Institut C. G. Jung de Zurich — Présentation",
+        "url": "https://junginstitut.ch/en/About-Us/Mission-statement"
+      }
+    },
+    {
+      "id": "contemporaines",
+      "title": "Théories contemporaines des émotions",
+      "region": "International",
+      "period": "XXe–XXIe siècles",
+      "family": "Psychologie scientifique",
+      "topics": [
+        "corps",
+        "peur",
+        "émotions"
+      ],
+      "question": "L'interprétation et le corps participent-ils aux émotions ?",
+      "summary": "Plusieurs modèles scientifiques débattent du rôle du corps, des évaluations et des concepts.",
+      "limit": "Il n'existe pas une seule théorie consensuelle de toutes les émotions.",
+      "source": {
+        "title": "Stanford — Emotion",
+        "url": "https://plato.stanford.edu/entries/emotion/"
+      }
+    },
+    {
+      "id": "regulation",
+      "title": "Recherche en régulation émotionnelle",
+      "region": "International",
+      "period": "XXe–XXIe siècles",
+      "family": "Psychologie scientifique",
+      "topics": [
+        "colère",
+        "peur",
+        "émotions"
+      ],
+      "question": "Quelle stratégie convient à quel contexte ?",
+      "summary": "La recherche compare des processus de régulation et examine leur flexibilité.",
+      "limit": "Notre atelier n'est pas un traitement scientifiquement validé.",
+      "source": {
+        "title": "American Psychological Association — Emotion Regulation",
+        "url": "https://www.apa.org/pubs/journals/special/emo-emotion-regulation"
+      }
+    },
+    {
+      "id": "tcc",
+      "title": "Thérapies cognitives et comportementales",
+      "region": "International",
+      "period": "XXe–XXIe siècles",
+      "family": "Psychanalyse et psychiatrie",
+      "topics": [
+        "peur",
+        "action",
+        "émotions"
+      ],
+      "question": "Quand l'aide d'un professionnel est-elle pertinente ?",
+      "summary": "L'OMS recommande certaines interventions TCC structurées pour des troubles précis chez l'adulte.",
+      "limit": "Ne pas substituer ce site à un traitement ou pratiquer des interventions sans qualification.",
+      "source": {
+        "title": "OMS — Interventions psychologiques structurées",
+        "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/anxiety/brief-structured-psychological-interventions"
+      }
+    }
+  ]
+}
