@@ -1,0 +1,32 @@
+/* Muze-X Research Centre — CSS-only presentation, no images or third-party dependencies */
+.lab-hero{background:linear-gradient(120deg,#123a35 0%,#1a6255 72%,#124d54 100%);color:#fff;padding-block:5.5rem}
+.lab-hero-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(290px,.8fr);align-items:center;gap:clamp(2rem,5vw,5rem)}
+.lab-hero .eyebrow{color:#ceedd6}.lab-hero h1{font-size:clamp(2.7rem,5.5vw,4.6rem)}.lab-hero h1 em{font-style:normal;color:#e5edae}.lab-hero .intro{color:#e1eee8}
+.lab-ghost{color:#fff;border:1px solid #b5d6d0;background:transparent}.lab-ghost:hover{background:#ffffff1a}
+.lab-hero-aside{padding:2rem;border:1px solid #a6d3c4;border-radius:20px;background:#ffffff0b}.lab-hero-aside h2{font-size:1.8rem;margin:0 0 1.5rem}.lab-hero-aside>div{border-top:1px solid #ffffff4d;padding-top:.75rem;margin-top:.75rem}.lab-hero-aside p{margin:.1rem 0 0;color:#e5f0e8;font-size:.88rem}.lab-hero-symbol{display:block;font-family:Georgia,serif;color:#e2efc0;font-size:3rem;line-height:1;margin-bottom:1.1rem}
+.lab-soft{background:#e8f4ed;border-block:1px solid var(--line)}
+.brain-grid,.method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+.brain-card{border:1px solid var(--line);background:#fff;border-radius:var(--radius);padding:1.5rem}.brain-card h3{font-size:1.23rem;margin:.75rem 0}.brain-card p,.method-grid p{color:var(--muted);margin:0}
+.brain-mark{font-family:Georgia,serif;font-size:2rem;color:#377e64}.lab-inline-link{margin-top:1.7rem;border-left:4px solid #2b745d;padding:.9rem 1rem;background:#ecf6ef;border-radius:8px}
+.method-grid>article{background:#fff;border-radius:var(--radius);padding:1.5rem;border:1px solid var(--line)}.method-grid h3{margin:.65rem 0}
+.method-no{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#d7eecb;color:#1c573e;width:42px;height:42px;font-weight:850}.lab-note{margin-top:1.5rem}
+.research-controls{display:grid;grid-template-columns:minmax(180px,2fr) minmax(170px,1fr) minmax(170px,1fr) auto;gap:.9rem;align-items:end;margin:1.8rem 0 1rem}
+.research-controls .field{min-width:0}.research-controls .button{min-height:48px}
+.study-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1.1rem;margin:1.5rem 0}
+.study-card,.practice-card{display:flex;flex-direction:column;gap:.6rem;border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:1.5rem}
+.study-card h3,.practice-card h3{font-size:1.23rem;margin:0}.study-card p,.practice-card p{margin:0;color:var(--muted);line-height:1.65}
+.study-card .tag{align-self:flex-start;margin:0}.study-card .study-meta{font-size:.83rem;color:#37594d;font-weight:700}
+.study-card .study-primary{color:var(--ink);font-weight:650}.study-card details,.practice-card details{margin-top:.3rem}
+.study-card summary,.practice-card summary{color:var(--green);font-weight:750;cursor:pointer}
+.study-card details p,.practice-card details p{margin-top:.5rem}
+.study-card .study-links{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);font-size:.9rem}.study-card .study-links a{font-weight:750}
+.study-card .study-doi{font-size:.74rem;word-break:break-word;color:var(--muted);display:block;margin-top:.2rem}
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1.1rem;margin:1.5rem 0}
+.practice-card .practice-icon{width:48px;height:48px;display:grid;place-items:center;background:#dcefd8;border-radius:14px;color:#205e44;font-size:1.8rem}
+.practice-card h4{font-size:.83rem;margin:.8rem 0 .2rem;color:var(--ink);text-transform:uppercase;letter-spacing:.045em}
+.practice-card .practice-source{margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.45rem}
+.practice-source a{padding:.36rem .65rem;background:#e4f1e9;border-radius:8px;font-size:.8rem;font-weight:750;text-decoration:none}.practice-source a:hover{text-decoration:underline}
+.safety-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}.safety-grid h3{font-size:1.1rem}.safety-grid p{color:var(--muted)}
+@media(max-width:970px){.lab-hero-grid{grid-template-columns:1fr}.lab-hero-aside{max-width:760px}.research-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.lab-hero{padding-block:3.5rem}.brain-grid,.method-grid,.research-controls,.safety-grid{grid-template-columns:1fr}}
+@media print{.top,.footer,.lab-hero,.lab-soft,.research-controls,.actions{display:none!important}.study-grid{display:block}.study-card{break-inside:avoid;margin-bottom:1rem;box-shadow:none}.section{padding-block:1.5rem}}
