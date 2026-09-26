@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Champ de réflexion émotionnelle : deux essaims, un cercle, un rectangle et trois mouvements visuels au choix. Sans compte, sans diagnostic et sans collecte.">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#102e35">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'">
+<title>Champ de réflexion émotionnelle — Muze-X</title>
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/champ-emotionnel.css">
+<script type="module" src="assets/champ-emotionnel.mjs"></script>
+</head>
+<body class="emotion-page">
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="wordmark" href="./" aria-label="Muze-X, retour à l'accueil"><span class="symbol" aria-hidden="true">◈</span><span>MUZE-X <small>Émotions & ressources ouvertes</small></span></a>
+<nav aria-label="Navigation principale">
+<a href="./">Accueil</a><a href="pensees.html">Philosophie</a><a href="recherche.html">Recherche</a><a href="#le-champ">Champ interactif</a><a href="privacy.html">Vos données</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="emotion-hero">
+<div class="wrap emotion-hero-inner">
+<p class="eyebrow">Expérience visuelle libre · Démonstrateur public</p>
+<h1>Champ de réflexion<br><em>émotionnelle.</em></h1>
+<p class="intro">Un espace visuel. Votre rythme. Aucun jugement. Observez deux essaims, déplacez leur centre, choisissez un mouvement ou laissez le champ immobile. Vous n'avez rien à expliquer.</p>
+<div class="actions">
+<a class="button main-button" href="#le-champ">Explorer le champ ↗</a>
+<a class="button field-hero-link" href="recherche.html">Comprendre les recherches ↗</a>
+</div>
+<p class="quiet">Sans compte · Sans collecte émotionnelle · Aucune interprétation de vos gestes</p>
+</div>
+</section>
+<section class="wrap section field-section" id="le-champ" aria-labelledby="field-title">
+<p class="eyebrow">Un rectangle · Un cercle · Deux essaims</p>
+<h2 id="field-title">Choisissez un mouvement, ou observez simplement.</h2>
+<p class="section-lead">L'attraction rassemble, le vortex fait circuler et la dispersion éloigne les particules. Ce sont trois effets graphiques, pas trois catégories d'émotions. Aucun mouvement n'est meilleur qu'un autre.</p>
+<fieldset class="mode-fieldset">
+<legend>Mouvements disponibles</legend>
+<div class="mode-grid" role="group" aria-label="Mouvements visuels au choix">
+<button type="button" class="mode-choice" data-mode="attraction" aria-pressed="true"><span class="mode-illustration" aria-hidden="true">◎</span><span class="mode-title">Attraction</span><span class="mode-subtitle">Rassembler autour d'un point</span></button>
+<button type="button" class="mode-choice" data-mode="vortex" aria-pressed="false"><span class="mode-illustration" aria-hidden="true">◌</span><span class="mode-title">Vortex</span><span class="mode-subtitle">Circuler autour d'un point</span></button>
+<button type="button" class="mode-choice" data-mode="dispersion" aria-pressed="false"><span class="mode-illustration" aria-hidden="true">⁙</span><span class="mode-title">Dispersion</span><span class="mode-subtitle">Éloigner et laisser de l'espace</span></button>
+</div>
+</fieldset>
+<p id="mode-description" class="mode-description">Les deux essaims sont attirés vers un point. Vous pouvez déplacer ce point ou modifier la force du mouvement.</p>
+<div class="field-header">
+<div><h3>Le champ</h3><p>Au départ, tout est immobile. Vous décidez si le mouvement commence.</p></div>
+<div class="field-primary-actions">
+<button id="champ-play" type="button" class="button field-primary" aria-pressed="false">Démarrer le mouvement</button>
+<button id="champ-reset" type="button" class="button field-outline">Réinitialiser</button>
+</div>
+</div>
+<div class="field-shell" id="champ-surface" aria-label="Zone de mouvement graphique">
+<canvas id="champ-canvas" tabindex="0" role="group" aria-label="Champ graphique interactif. Cliquez ou touchez pour déplacer le centre. Au clavier, utilisez les flèches ; Maj plus flèche déplace plus loin." aria-describedby="field-keyboard field-meaning">
+Votre navigateur ne prend pas en charge Canvas. Les descriptions et les réglages textuels restent disponibles.
+</canvas>
+<div class="field-overlay-label" aria-hidden="true"><span class="field-legend-dot cyan"></span> Essaim A <span class="field-legend-dot violet"></span> Essaim B</div>
+</div>
+<p id="field-keyboard" class="field-help">Déplacez le centre avec le doigt, la souris ou les flèches du clavier lorsque le champ est sélectionné. Maj + flèche : déplacement plus grand. Les mouvements peuvent être mis en pause immédiatement.</p>
+<p id="champ-status" class="field-status" role="status" aria-live="polite">Champ immobile à l'ouverture.</p>
+<div class="field-controls" aria-label="Réglages graphiques">
+<div class="field-setting">
+<label for="champ-speed">Vitesse <output id="champ-speed-output" for="champ-speed">34 %</output></label>
+<input type="range" id="champ-speed" min="10" max="100" step="2" value="34" aria-describedby="speed-desc">
+<p id="speed-desc" class="field-setting-help">Rythme du mouvement des particules, pas mesure de votre état.</p>
+</div>
+<div class="field-setting">
+<label for="champ-intensity">Intensité <output id="champ-intensity-output" for="champ-intensity">42 %</output></label>
+<input type="range" id="champ-intensity" min="0" max="100" step="2" value="42" aria-describedby="intensity-desc">
+<p id="intensity-desc" class="field-setting-help">Force du mouvement choisi, sans interprétation psychologique.</p>
+</div>
+<div class="field-setting">
+<label for="champ-density">Particules <output id="champ-density-output" for="champ-density">100</output></label>
+<input type="range" id="champ-density" min="40" max="180" step="20" value="100" aria-describedby="density-desc">
+<p id="density-desc" class="field-setting-help">Nombre de points dessinés dans le rectangle.</p>
+</div>
+</div>
+<div class="field-secondary-actions" aria-label="Actions rapides">
+<button id="champ-slow" type="button" class="button field-outline">Ralentir</button>
+<button id="champ-air" type="button" class="button field-outline">Aérer</button>
+<button id="champ-recenter" type="button" class="button field-outline">Recentrer</button>
+<a class="field-exit" href="./">Quitter cette page →</a>
+</div>
+<div class="field-matter" id="field-meaning">
+<strong>Le champ ne vous analyse pas.</strong> Le choix d'un mouvement, la position du cercle et l'utilisation des commandes ne correspondent à aucun diagnostic ni score. Le mode choisi n'est transmis à personne.
+</div>
+<noscript><p class="note">L'animation nécessite JavaScript. Les trois modes, les questions et les ressources pédagogiques restent consultables sans lui.</p></noscript>
+</section>
+<section class="field-soft section" id="observer"><div class="wrap">
+<p class="eyebrow">Questions facultatives</p><h2>Aucune réponse n'est exigée.</h2>
+<p class="section-lead">Vous pouvez vous contenter de regarder, modifier un paramètre ou quitter la page. Si vous le souhaitez, voici quelques questions pour observer le mouvement, et non votre personnalité.</p>
+<div class="field-question-grid">
+<article><span class="field-question-number">01</span><h3>Que remarquez-vous ?</h3><p>Deux groupes, un cercle, des trajectoires. Voyez-vous plutôt leur mouvement commun ou leurs différences ?</p></article>
+<article><span class="field-question-number">02</span><h3>Changer un seul élément ?</h3><p>Essayez de déplacer le centre, ralentir ou diminuer le nombre de particules. Vous pouvez aussi ne rien changer.</p></article>
+<article><span class="field-question-number">03</span><h3>Quand s'arrêter ?</h3><p>Lorsque vous le souhaitez. Mettre en pause, fermer la page ou passer à une activité concrète sont des possibilités équivalentes.</p></article>
+</div>
+</div></section>
+<section class="wrap section" id="limites">
+<p class="eyebrow">Liberté et limites</p><h2>Une expérience visuelle, pas un traitement.</h2>
+<p class="section-lead">Certaines personnes apprécient les mouvements visuels ; d'autres les trouvent inconfortables. Le champ démarre donc à l'arrêt, respecte la préférence système de mouvement réduit et s'interrompt automatiquement lorsque l'onglet est masqué. Il ne garantit aucune réduction du stress ou de l'anxiété.</p>
+<div class="field-safety-grid">
+<div><h3>Votre rythme</h3><p>Aucun temps minimum, aucune progression obligatoire, aucun encouragement automatique à prolonger l'animation. Pause et sortie sont toujours disponibles.</p></div>
+<div><h3>Votre contexte</h3><p>La sécurité du logement, les difficultés administratives, la douleur et les contraintes matérielles ne disparaissent pas avec une animation. Une aide adaptée reste pertinente lorsque nécessaire.</p></div>
+<div><h3>Vos données</h3><p>Les paramètres et les mouvements du pointeur restent dans la mémoire temporaire de cette page. Aucun enregistrement, profilage, formulaire ni requête applicative externe.</p></div>
+</div>
+<div class="actions"><a class="text-link" href="privacy.html">Comprendre le parcours des données →</a><a class="text-link" href="recherche.html">Lire les études sur les émotions et les pratiques →</a><a class="text-link" href="https://github.com/Muse-IRS/muze-x-emotions-open-resources/blob/main/CHAMP_EMOTIONNEL_DESIGN.md" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Cahier de conception public ↗</a></div>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-grid"><div><strong>Muze-X · Émotions & ressources ouvertes</strong><p>Support visuel autonome, sans analyse de personne ni efficacité thérapeutique revendiquée.</p></div><nav aria-label="Navigation de pied de page"><a href="./">Accueil</a><a href="valeurs.html">Nos valeurs</a><a href="privacy.html">Confidentialité et droits</a><a href="https://github.com/Muse-IRS/muze-x-emotions-open-resources">Dépôt GitHub</a></nav><p class="license-note">Code original Apache 2.0 · Textes pédagogiques originaux CC BY 4.0. Aucun partenariat ou soutien institutionnel revendiqué.</p></div></footer>
+</body>
+</html>
