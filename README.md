@@ -2,7 +2,7 @@
 
 **Une ressource pédagogique gratuite, open source et autonome**, destinée aux professionnels de la formation et de l'accompagnement, et librement consultable par toute personne intéressée.
 
-**Site prévu :** https://muse-irs.github.io/muze-x-emotions-open-resources/ (accessible après activation de GitHub Pages).
+**Site public :** https://muse-irs.github.io/muze-x-emotions-open-resources/ · **Atlas des émotions :** https://muse-irs.github.io/muze-x-emotions-open-resources/pensees.html
 
 ## Pourquoi ce projet ?
 
@@ -13,6 +13,14 @@ L'outil distingue le ressenti, les faits connus, les incertitudes et les options
 Trois entrées : **Ressentir et prendre du recul** ; **Corps, contexte et adaptation** ; **Attachement, sécurité et possibilité de choix** (ce dernier thème est exploratoire et ne constitue pas une théorie clinique validée).
 
 Ce projet ne dispense ni soins, ni diagnostic, ni conseil juridique ou social individualisé.
+
+## Les émotions à travers les pensées — extension 0.2
+
+La page [Histoire des émotions et courants de pensée](pensees.html) présente une **première sélection de 31 entrées publiques et documentées**, non exhaustive, depuis les textes égyptiens et mésopotamiens jusqu'aux philosophies d'Asie et de Grèce, aux courants médiévaux, modernes, à la psychanalyse et à la psychologie actuelle. Le catalogue ouvert est conservé dans [data/pensees.json](data/pensees.json). Chaque entrée présente une question accessible, un résumé prudent, une référence externe et une limite.
+
+Le lecteur peut explorer par question (colère, peur, attachement, deuil, désir, relations, doute et corps), par période ou par courant, sans compte ni conservation de ses recherches.
+
+Une source antique, une reconstruction historienne, un courant de psychanalyse et une recommandation clinique ne constituent pas une seule catégorie de preuve. **La similarité entre deux idées n'établit ni filiation historique ni validation scientifique.** Le corpus reste évolutif : des traditions, écoles et auteurs manquent encore et pourront être ajoutés par contributions sourcées.
 
 ## Fonctionnalités de la première version
 
@@ -63,4 +71,4 @@ Ce dépôt public est **autonome**. Il ne duplique aucun dépôt privé, aucun d
 
 ## État du projet
 
-**Version 0.1.0 — démonstrateur pédagogique initial.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.
+**Version 0.2.0 — démonstrateur pédagogique avec atlas public introductif.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.

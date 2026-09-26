@@ -27,3 +27,9 @@ En proposant une contribution originale par pull request, vous confirmez pouvoir
 Un compte GitHub expose son identité de profil et un historique public. Consulter [la notice RGPD](DATA_RIGHTS.md) avant de contribuer.
 
 **Aucun engagement de réciprocité, de collaboration ou de réponse personnalisée** n'est requis pour bénéficier des ressources.
+
+## Proposer un auteur, une tradition ou un mouvement de pensée
+
+L'atlas public `pensees.html` s'appuie sur `data/pensees.json`. Pour toute nouvelle entrée, fournir : une source vérifiable et sa date de consultation, l'auteur ou la tradition, la période, une question simple, un résumé prudent et une limite de ce que la source établit. Les liens vers des vidéos, podcasts et traductions sont les bienvenus si leur attribution et leurs conditions d'utilisation sont précisées.
+
+Ne pas attribuer de citations célèbres non vérifiées, assimiler des traditions distinctes, inventer une généalogie historique, ni transformer une hypothèse psychanalytique en résultat clinique démontré. Une différence entre auteurs est un apport documentaire à analyser ; elle ne nécessite pas un classement de valeur. Aucune information individuelle, dossier ou confidence personnelle ne doit figurer dans une contribution publique.

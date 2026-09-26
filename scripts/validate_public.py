@@ -8,7 +8,8 @@ from urllib.parse import urlparse
 REQUIRED = [
     "README.md", "LICENSE", "CONTENT_LICENSE.md", "NOTICE.md",
     "VALUES.md", "DATA_RIGHTS.md", "CONTRIBUTING.md", "SECURITY.md",
-    "index.html", "privacy.html", "valeurs.html", "assets/styles.css",
+    "index.html", "privacy.html", "valeurs.html", "pensees.html", "assets/styles.css",
+    "assets/pensees.css", "assets/pensees.js", "data/pensees.json",
     "assets/app.js", "data/resources.json", ".nojekyll",
     ".github/ISSUE_TEMPLATE/proposer-ressource.yml",
 ]
@@ -33,7 +34,7 @@ class PublicHTML(HTMLParser):
         if tag == "a":
             self.links.append(a.get("href", ""))
 
-for page in ("index.html", "privacy.html", "valeurs.html"):
+for page in ("index.html", "privacy.html", "valeurs.html", "pensees.html"):
     text = Path(page).read_text(encoding="utf-8")
     parser = PublicHTML()
     parser.feed(text)
@@ -66,5 +67,14 @@ for path in Path(".").rglob("*"):
                           "BEGIN PRIVATE KEY", "sk-proj-", "ghp_"):
             assert forbidden not in content, f"Restricted marker {forbidden} in {path}"
 
-assert "No" not in []  # no-op to keep this script pure stdlib
-print(f"Validation OK: {len(REQUIRED)} required files, {len(catalog['resources'])} resources, 3 HTML pages.")
+thoughts = json.loads(Path("data/pensees.json").read_text(encoding="utf-8"))
+thought_entries = thoughts.get("entries", [])
+assert len(thought_entries) >= 25, "Atlas seed unexpectedly incomplete"
+thought_ids = set()
+for entry in thought_entries:
+    assert {"id","title","region","period","family","topics","question","summary","limit","source"} <= entry.keys()
+    assert entry["id"] not in thought_ids
+    thought_ids.add(entry["id"])
+    assert entry["topics"] and entry["limit"].strip()
+    assert urlparse(entry["source"]["url"]).scheme == "https"
+print(f"Validation OK: {len(REQUIRED)} required files, {len(catalog['resources'])} resources, 4 HTML pages and {len(thought_entries)} atlas entries.")
