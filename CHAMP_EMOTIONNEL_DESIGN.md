@@ -74,3 +74,13 @@ La page est réutilisable par tout professionnel sous les licences du dépôt, *
 ## 8. Critères d'acceptation
 
 La version est publiable si les tests automatiques confirment : (1) trois modes fonctionnels ; (2) particules bornées et paramètres plafonnés ; (3) aucune animation initiale ni redémarrage automatique ; (4) contrôle par le clavier et pointeur ; (5) données non persistées et absence de requêtes externes applicatives ; (6) liens vers la notice RGPD ; (7) absence de publication d'architecture ou de dossiers privés ; (8) liens depuis la page d'accueil et documentation de l'extension.
+
+## 9. Plein écran et retour à la configuration intégrée — 0.4.1
+
+Le rectangle du champ comporte un bouton **Plein écran** dans l'angle supérieur droit, à la manière des commandes d'un lecteur vidéo. Il agrandit uniquement les essaims, sans supprimer ni recharger la page. Le même bouton affiche ensuite **Quitter le plein écran** ; la touche Échap est prise en charge. Les commandes de **pause et reprise** restent accessibles dans le champ agrandi.
+
+- L'API Fullscreen native (`requestFullscreen`, `exitFullscreen`, `fullscreenchange`) est utilisée lorsqu'elle fonctionne. La sortie native par Échap rétablit aussi l'interface initiale.
+- Sur les navigateurs qui ne permettent pas le plein écran d'un élément HTML, notamment certains navigateurs iOS, une présentation immersive en CSS fixe utilise la taille disponible de la fenêtre. Ce repli ne prétend pas masquer les éléments système du navigateur.
+- **Le mode choisi, la vitesse, l'intensité, la densité, la position et les vitesses des particules restent conservés.** L'entrée et la sortie mettent à l'échelle les coordonnées existantes ; aucun essaim n'est recréé.
+- Les réglages restent locaux au navigateur, en mémoire vive : ni collecte, ni stockage, ni suivi de gestes.
+- Tests automatisés : API native, restauration après Échap, fallback CSS, refus d'autorisation native, remise à l'échelle aller-retour et absence de réinitialisation des essaims.

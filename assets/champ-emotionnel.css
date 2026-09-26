@@ -41,3 +41,22 @@
 @media(max-width:600px){.emotion-hero{padding:3rem 0}.mode-grid,.field-controls{grid-template-columns:1fr}.mode-choice{min-height:96px}.field-primary-actions{width:100%}.field-primary-actions .button{flex:1}.field-exit{margin-left:0}.field-shell{height:340px}.field-header{align-items:stretch}.field-secondary-actions .button{flex:1}}
 @media(prefers-reduced-motion:reduce){.emotion-page *,.emotion-page *:before,.emotion-page *:after{animation:none!important;transition:none!important}}
 @media print{.top,.footer,.emotion-hero,.mode-fieldset,.field-primary-actions,.field-secondary-actions,.field-controls,.field-shell{display:none!important}.field-section{padding:0}.field-question-grid,.field-safety-grid{display:block}.field-question-grid article{break-inside:avoid}.field-section h2{font-size:22pt}}
+
+/* YouTube-style fullscreen / inline return, supported by mouse, touch, keyboard. */
+.field-fullscreen-toolbar{position:absolute;z-index:4;top:14px;right:14px;display:flex;align-items:center;gap:.6rem}
+.field-fullscreen-button{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:44px;min-width:44px;padding:.55rem .85rem;border:1px solid #95b8c1;border-radius:9px;background:#0c2c39ee;color:#f3f9fb;font-weight:750;box-shadow:0 2px 14px #00131d99;cursor:pointer}
+.field-fullscreen-button:hover{background:#244f5d}
+.field-fullscreen-button:focus-visible{outline:3px solid #f4cb77;outline-offset:3px}
+.field-fullscreen-button[hidden]{display:none!important}
+.field-fullscreen-icon{width:20px;height:20px;flex:none}
+.field-icon-exit{display:none}
+.field-shell.is-fullscreen .field-icon-enter{display:none}
+.field-shell.is-fullscreen .field-icon-exit{display:block}
+.field-shell:fullscreen,.field-shell.is-fullscreen-fallback{width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;min-height:0!important;margin:0;border:0;border-radius:0;background:#071b28}
+.field-shell:fullscreen{overflow:hidden}
+.field-shell.is-fullscreen-fallback{position:fixed!important;inset:0;z-index:10000;overflow:hidden}
+body.champ-immersive-open{overflow:hidden}
+.field-shell.is-fullscreen .field-fullscreen-toolbar{top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right))}
+.field-shell.is-fullscreen .field-overlay-label{left:max(16px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom))}
+@media(max-width:460px){.field-fullscreen-button{font-size:.77rem;padding:.5rem .7rem}.field-fullscreen-toolbar{right:9px;top:9px;gap:.4rem}.field-shell.is-fullscreen .field-fullscreen-toolbar{top:max(10px,env(safe-area-inset-top))}}
+@media print{.field-fullscreen-toolbar{display:none!important}}

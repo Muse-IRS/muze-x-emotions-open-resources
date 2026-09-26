@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { clamp, createParticles, advanceParticles, MODES } from "../assets/champ-physics.mjs";
+import { clamp, createParticles, advanceParticles, rescaleParticles, MODES } from "../assets/champ-physics.mjs";
 
 test("Only the three declared visual modes are accepted", () => {
   assert.deepEqual(MODES, ["attraction", "vortex", "dispersion"]);
@@ -43,5 +43,25 @@ test("Population and controls stay in bounded public ranges", () => {
     const p = createParticles(90, 320, 280);
     for (let n=0;n<1000;n++) advanceParticles(p,320,280,{x:0,y:1000},{mode,speed:1000,intensity:1000},.1);
     assert.ok(p.every(x => Number.isFinite(x.x) && Number.isFinite(x.y) && x.x >= 8 && x.x <= 312 && x.y >=8 && x.y <=272),mode);
+  }
+});
+
+test("Fullscreen and return rescale particles without recreating the essaims", () => {
+  const particles = createParticles(100, 500, 360);
+  const original = structuredClone(particles);
+  const identities = [...particles];
+  rescaleParticles(particles, 500, 360, 1000, 720);
+  assert.equal(particles.length, original.length);
+  assert.ok(particles.every((p, i) => p === identities[i]));
+  for (let i = 0; i < particles.length; i += 1) {
+    assert.ok(Math.abs(particles[i].x - original[i].x * 2) < .01);
+    assert.ok(Math.abs(particles[i].y - original[i].y * 2) < .01);
+  }
+  rescaleParticles(particles, 1000, 720, 500, 360);
+  for (let i = 0; i < particles.length; i += 1) {
+    assert.ok(Math.abs(particles[i].x - original[i].x) < .01);
+    assert.ok(Math.abs(particles[i].y - original[i].y) < .01);
+    assert.equal(particles[i].swarm, original[i].swarm);
+    assert.equal(particles[i].phase, original[i].phase);
   }
 });

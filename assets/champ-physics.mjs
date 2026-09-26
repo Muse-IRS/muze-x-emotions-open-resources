@@ -87,3 +87,17 @@ export function advanceParticles(particles, width, height, center, config, dt) {
   }
   return particles;
 }
+
+/** Preserve swarm positions, velocities and identity when the canvas resizes.
+ * Entering or leaving fullscreen never re-seeds the existing particles. */
+export function rescaleParticles(particles, oldWidth, oldHeight, newWidth, newHeight) {
+  const sx = Math.max(60, newWidth) / Math.max(60, oldWidth);
+  const sy = Math.max(60, newHeight) / Math.max(60, oldHeight);
+  for (const p of particles) {
+    p.x = clamp(p.x * sx, 8, Math.max(60, newWidth) - 8);
+    p.y = clamp(p.y * sy, 8, Math.max(60, newHeight) - 8);
+    p.vx *= sx;
+    p.vy *= sy;
+  }
+  return particles;
+}

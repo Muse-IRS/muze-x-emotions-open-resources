@@ -32,7 +32,7 @@ L'examen des études suit notre [charte de recherche publique](RESEARCH_POLICY.m
 
 ## Champ de réflexion émotionnelle — extension 0.4
 
-La page [Champ de réflexion émotionnelle](champ-emotionnel.html) propose une expérience visuelle libre : **un rectangle, un cercle mobile et deux essaims**. Les modes attraction, vortex et dispersion sont de simples mouvements graphiques, pas des catégories de personnes ou des diagnostics.
+La page [Champ de réflexion émotionnelle](champ-emotionnel.html) propose une expérience visuelle libre : **un rectangle, un cercle mobile et deux essaims**. Un bouton de type lecteur vidéo agrandit le champ en plein écran et permet de revenir à sa place initiale, en conservant les réglages et les trajectoires. En cas d’indisponibilité de l’API native sur mobile, l’interface utilise un mode immersif adapté à la fenêtre. Les modes attraction, vortex et dispersion sont de simples mouvements graphiques, pas des catégories de personnes ou des diagnostics.
 
 L'animation **ne démarre jamais automatiquement**. La personne peut choisir le mouvement, déplacer le centre au doigt, à la souris ou au clavier, régler vitesse, intensité et nombre de particules, ralentir, aérer, recentrer, mettre en pause ou réinitialiser. La préférence système de réduction du mouvement est respectée, et tout passage en arrière-plan met l'animation en pause.
 

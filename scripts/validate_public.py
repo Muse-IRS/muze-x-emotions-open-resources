@@ -13,7 +13,8 @@ REQUIRED = [
     "assets/recherche.css", "assets/recherche.js", "data/recherche.json", "RESEARCH_POLICY.md",
     "champ-emotionnel.html", "assets/champ-emotionnel.css",
     "assets/champ-emotionnel.mjs", "assets/champ-physics.mjs",
-    "tests/champ-emotionnel.test.mjs", "CHAMP_EMOTIONNEL_DESIGN.md",
+    "tests/champ-emotionnel.test.mjs", "tests/champ-fullscreen.test.mjs",
+    "assets/champ-fullscreen.mjs", "CHAMP_EMOTIONNEL_DESIGN.md",
     "assets/app.js", "data/resources.json", ".nojekyll",
     ".github/ISSUE_TEMPLATE/proposer-ressource.yml",
 ]
@@ -65,7 +66,7 @@ for path in Path(".").rglob("*"):
     if ".git" in path.parts or not path.is_file():
         continue
     assert path.suffix.lower() not in {".zip", ".pdf", ".xlsx", ".docx", ".har"}
-    if path.suffix.lower() in {".html", ".js", ".css", ".json", ".md", ".yml"}:
+    if path.suffix.lower() in {".html", ".js", ".mjs", ".css", ".json", ".md", ".yml"}:
         content = path.read_text(encoding="utf-8")
         for forbidden in ("PGC-IA-Collaborative", "rsa-formation-data-evidence-control",
                           "BEGIN PRIVATE KEY", "sk-proj-", "ghp_"):
@@ -102,7 +103,7 @@ controller = Path("assets/champ-emotionnel.mjs").read_text(encoding="utf-8")
 engine = Path("assets/champ-physics.mjs").read_text(encoding="utf-8")
 for element_id in ("champ-canvas", "champ-play", "champ-reset", "champ-speed",
                    "champ-intensity", "champ-density", "champ-slow", "champ-air",
-                   "champ-recenter", "champ-status"):
+                   "champ-recenter", "champ-status", "champ-fullscreen", "champ-fullscreen-play"):
     assert 'id="' + element_id + '"' in field, "Missing accessible field control: " + element_id
 for mode in ("attraction", "vortex", "dispersion"):
     assert 'data-mode="' + mode + '"' in field
@@ -111,7 +112,12 @@ assert 'type="module"' in field
 assert 'aria-pressed' in field and 'tabindex="0"' in field
 assert "document.hidden" in controller and "prefers-reduced-motion" in controller
 assert "requestAnimationFrame" in controller and "cancelAnimationFrame" in controller
+fullscreen = Path("assets/champ-fullscreen.mjs").read_text(encoding="utf-8")
+assert "requestFullscreen" in fullscreen and "exitFullscreen" in fullscreen
+assert "fullscreenchange" in fullscreen and "Escape" in fullscreen
+assert "is-fullscreen-fallback" in fullscreen
+assert "rescaleParticles" in controller and "rescaleParticles" in engine
 for forbidden in ("fetch(", "localStorage", "sessionStorage", "sendBeacon", "XMLHttpRequest",
                   "navigator.geolocation", "getUserMedia"):
-    assert forbidden not in controller and forbidden not in engine, "Privacy boundary violation: " + forbidden
+    assert forbidden not in controller and forbidden not in engine and forbidden not in fullscreen, "Privacy boundary violation: " + forbidden
 print(f"Validation OK: {len(REQUIRED)} files, 6 HTML pages, {len(thought_entries)} atlas entries, {len(studies)} scientific references, {len(practices)} optional practices, interactive field privacy checks.")

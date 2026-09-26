@@ -1,4 +1,5 @@
-import { clamp, createParticles, advanceParticles, MODES } from "./champ-physics.mjs";
+import { clamp, createParticles, advanceParticles, rescaleParticles, MODES } from "./champ-physics.mjs";
+import { attachFieldFullscreen } from "./champ-fullscreen.mjs";
 const canvas = document.getElementById("champ-canvas");
 const field = document.getElementById("champ-surface");
 const modeButtons = [...document.querySelectorAll("[data-mode]")];
@@ -15,6 +16,8 @@ const reset = document.getElementById("champ-reset");
 const slow = document.getElementById("champ-slow");
 const air = document.getElementById("champ-air");
 const recenter = document.getElementById("champ-recenter");
+const fullscreenButton = document.getElementById("champ-fullscreen");
+const fullscreenPause = document.getElementById("champ-fullscreen-play");
 const descriptions = {
   attraction: "Les deux essaims sont attirés vers un point. Vous pouvez déplacer ce point ou modifier la force du mouvement.",
   vortex: "Les essaims circulent autour d'un point. Vous pouvez ralentir leur rotation et déplacer le centre.",
@@ -35,6 +38,7 @@ if (canvas && field && status && play && MODES.every(mode => modeButtons.some(bu
     };
     const tell = text => { status.textContent = text; };
     function updateControls() {
+      if (fullscreenPause) fullscreenPause.textContent = state.running ? "Mettre en pause" : "Démarrer";
       for (const button of modeButtons) button.setAttribute("aria-pressed", String(button.dataset.mode === state.mode));
       modeText.textContent = descriptions[state.mode];
       speed.value = state.speed; intensity.value = state.intensity; density.value = state.density;
@@ -89,7 +93,8 @@ if (canvas && field && status && play && MODES.every(mode => modeButtons.some(bu
       canvas.height = Math.round(state.height * state.dpr);
       state.center.x = oldWidth ? clamp(state.center.x / oldWidth * state.width, 15, state.width - 15) : state.width / 2;
       state.center.y = oldHeight ? clamp(state.center.y / oldHeight * state.height, 15, state.height - 15) : state.height / 2;
-      state.particles = createParticles(state.density, state.width, state.height);
+      if (state.particles.length) rescaleParticles(state.particles, oldWidth, oldHeight, state.width, state.height);
+      else state.particles = createParticles(state.density, state.width, state.height);
       redraw();
     }
     function updateCenterFromPointer(e) {
@@ -104,12 +109,13 @@ if (canvas && field && status && play && MODES.every(mode => modeButtons.some(bu
       updateControls(); redraw();
       tell("Mode " + button.textContent.trim() + ". " + descriptions[state.mode]);
     });
-    play.addEventListener("click", () => {
+    function togglePlayback() {
       if (state.running) { stop("Mouvement en pause. Vos réglages restent visibles jusqu'à la fermeture de cette page."); return; }
       state.running = true; state.lastDraw = 0;
       updateControls(); tell("Mouvement activé. Le bouton Mettre en pause reste disponible.");
       state.request = requestAnimationFrame(tick);
-    });
+    }
+    play.addEventListener("click", togglePlayback);
     speed.addEventListener("input", () => { state.speed = Number(speed.value); updateControls(); });
     intensity.addEventListener("input", () => { state.intensity = Number(intensity.value); updateControls(); });
     density.addEventListener("input", () => {
@@ -169,6 +175,10 @@ if (canvas && field && status && play && MODES.every(mode => modeButtons.some(bu
       if (reduce.addEventListener) reduce.addEventListener("change", onReduce);
       else if (reduce.addListener) reduce.addListener(onReduce);
     }
+    if (fullscreenButton && fullscreenPause) attachFieldFullscreen({
+      stage: field, button: fullscreenButton, pauseButton: fullscreenPause,
+      doc: document, onResize: resize, onTogglePlay: togglePlayback, onStatus: tell
+    });
     if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
     else window.addEventListener("resize", resize, { passive: true });
     updateControls(); resize();
