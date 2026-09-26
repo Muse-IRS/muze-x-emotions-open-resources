@@ -17,5 +17,6 @@ jobs:
         run: |
           node --check assets/app.js
           node --check assets/pensees.js
+          node --check assets/recherche.js
       - name: Validate public files and privacy boundary
         run: python3 scripts/validate_public.py

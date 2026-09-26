@@ -2,7 +2,7 @@
 
 **Une ressource pédagogique gratuite, open source et autonome**, destinée aux professionnels de la formation et de l'accompagnement, et librement consultable par toute personne intéressée.
 
-**Site public :** https://muse-irs.github.io/muze-x-emotions-open-resources/ · **Atlas des émotions :** https://muse-irs.github.io/muze-x-emotions-open-resources/pensees.html
+**Site public :** https://muse-irs.github.io/muze-x-emotions-open-resources/ · **Atlas des émotions :** https://muse-irs.github.io/muze-x-emotions-open-resources/pensees.html · **Centre de recherche :** https://muse-irs.github.io/muze-x-emotions-open-resources/recherche.html
 
 ## Pourquoi ce projet ?
 
@@ -21,6 +21,14 @@ La page [Histoire des émotions et courants de pensée](pensees.html) présente 
 Le lecteur peut explorer par question (colère, peur, attachement, deuil, désir, relations, doute et corps), par période ou par courant, sans compte ni conservation de ses recherches.
 
 Une source antique, une reconstruction historienne, un courant de psychanalyse et une recommandation clinique ne constituent pas une seule catégorie de preuve. **La similarité entre deux idées n'établit ni filiation historique ni validation scientifique.** Le corpus reste évolutif : des traditions, écoles et auteurs manquent encore et pourront être ajoutés par contributions sourcées.
+
+## Centre de recherche — extension 0.3
+
+La page [Recherche : cerveau, émotions et pratiques](recherche.html) propose une introduction accessible aux réseaux cérébraux impliqués dans les émotions et la régulation, avec **15 études ou synthèses sourcées** et **six pratiques** présentées de façon facultative : nature et contemplation, activité physique, méditation, yoga adapté, respiration confortable et repos.
+
+Son [catalogue de recherche structuré](data/recherche.json) enregistre auteurs ou organismes, établissement au moment de la publication, titre, année, type de méthode, population étudiée, résultats, limites et lien vers l'article ou la synthèse d'origine. Les liens vers les travaux de tiers n'autorisent pas à recopier leurs textes ou leurs figures.
+
+L'examen des études suit notre [charte de recherche publique](RESEARCH_POLICY.md). Une corrélation ne prouve pas la causalité ; un résultat d'IRM n'est pas un résultat clinique ; une étude courte ou spécifique ne justifie pas une recommandation universelle. Aucun score psychologique ni pratique obligatoire. La page n'est pas une consultation médicale.
 
 ## Fonctionnalités de la première version
 
@@ -71,4 +79,4 @@ Ce dépôt public est **autonome**. Il ne duplique aucun dépôt privé, aucun d
 
 ## État du projet
 
-**Version 0.2.0 — démonstrateur pédagogique avec atlas public introductif.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.
+**Version 0.3.0 — démonstrateur pédagogique, atlas philosophique et centre de recherche public.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.

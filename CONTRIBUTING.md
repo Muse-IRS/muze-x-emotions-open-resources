@@ -33,3 +33,11 @@ Un compte GitHub expose son identité de profil et un historique public. Consult
 L'atlas public `pensees.html` s'appuie sur `data/pensees.json`. Pour toute nouvelle entrée, fournir : une source vérifiable et sa date de consultation, l'auteur ou la tradition, la période, une question simple, un résumé prudent et une limite de ce que la source établit. Les liens vers des vidéos, podcasts et traductions sont les bienvenus si leur attribution et leurs conditions d'utilisation sont précisées.
 
 Ne pas attribuer de citations célèbres non vérifiées, assimiler des traditions distinctes, inventer une généalogie historique, ni transformer une hypothèse psychanalytique en résultat clinique démontré. Une différence entre auteurs est un apport documentaire à analyser ; elle ne nécessite pas un classement de valeur. Aucune information individuelle, dossier ou confidence personnelle ne doit figurer dans une contribution publique.
+
+## Proposer une étude au centre de recherche
+
+La page `recherche.html` est alimentée par `data/recherche.json`. Le [protocole éditorial public](RESEARCH_POLICY.md) demande la référence originale, les auteurs, l'établissement **au moment de la publication**, la méthode, la population, les comparateurs, les résultats observés, les limitations, les corrections et, lorsqu'ils ont été vérifiés, les conflits d'intérêts.
+
+Une étude contradictoire ou un résultat non significatif est une contribution valable. Les vidéos, podcasts et communiqués institutionnels sont des ressources complémentaires : ils ne se substituent pas à une publication scientifique vérifiable. Une thèse de coaching ou une publicité ne reçoit pas le statut d'étude par simple répétition.
+
+Ne publier aucune donnée de santé personnelle, questionnaire rempli ou cas réel d'allocataire. Les propositions concernent exclusivement des études déjà publiques et des descriptions factuelles.

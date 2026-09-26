@@ -8,8 +8,9 @@ from urllib.parse import urlparse
 REQUIRED = [
     "README.md", "LICENSE", "CONTENT_LICENSE.md", "NOTICE.md",
     "VALUES.md", "DATA_RIGHTS.md", "CONTRIBUTING.md", "SECURITY.md",
-    "index.html", "privacy.html", "valeurs.html", "pensees.html", "assets/styles.css",
+    "index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html", "assets/styles.css",
     "assets/pensees.css", "assets/pensees.js", "data/pensees.json",
+    "assets/recherche.css", "assets/recherche.js", "data/recherche.json", "RESEARCH_POLICY.md",
     "assets/app.js", "data/resources.json", ".nojekyll",
     ".github/ISSUE_TEMPLATE/proposer-ressource.yml",
 ]
@@ -34,7 +35,7 @@ class PublicHTML(HTMLParser):
         if tag == "a":
             self.links.append(a.get("href", ""))
 
-for page in ("index.html", "privacy.html", "valeurs.html", "pensees.html"):
+for page in ("index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html"):
     text = Path(page).read_text(encoding="utf-8")
     parser = PublicHTML()
     parser.feed(text)
@@ -77,4 +78,18 @@ for entry in thought_entries:
     thought_ids.add(entry["id"])
     assert entry["topics"] and entry["limit"].strip()
     assert urlparse(entry["source"]["url"]).scheme == "https"
-print(f"Validation OK: {len(REQUIRED)} required files, {len(catalog['resources'])} resources, 4 HTML pages and {len(thought_entries)} atlas entries.")
+research = json.loads(Path("data/recherche.json").read_text(encoding="utf-8"))
+studies, practices = research.get("studies", []), research.get("practices", [])
+assert len(studies) >= 12 and len(practices) >= 6
+study_ids = set()
+for study in studies:
+    assert {"id", "domain", "type", "year", "shortTitle", "authors", "organisation_at_publication", "title", "url", "population", "result", "limit", "practices"} <= study.keys()
+    assert study["id"] not in study_ids
+    study_ids.add(study["id"])
+    assert urlparse(study["url"]).scheme == "https"
+    assert study["population"].strip() and study["limit"].strip()
+for practice in practices:
+    assert {"id", "title", "description", "whatWeKnow", "tryExample", "cautions", "studyRefs"} <= practice.keys()
+    assert practice["studyRefs"] and all(ref in study_ids for ref in practice["studyRefs"])
+    assert practice["cautions"].strip()
+print(f"Validation OK: {len(REQUIRED)} files, 5 HTML pages, {len(thought_entries)} atlas entries, {len(studies)} scientific references, {len(practices)} optional practices.")

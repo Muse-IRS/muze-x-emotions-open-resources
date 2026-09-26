@@ -35,11 +35,17 @@ La personne ne doit pas fournir d'informations émotionnelles personnelles au si
 
 Aucune collecte directe ne sera ajoutée sans définir avant mise en service : responsable légal, finalités, base juridique, minimisation, conservation, sous-traitants, éventuels transferts, canal confidentiel d'exercice des droits et mesures de sécurité appropriées.
 
-## 4. Médias externes
+## 4. Catalogue scientifique
+
+Le centre de recherche télécharge un catalogue de **métadonnées scientifiques publiques** puis effectue localement les recherches et filtres sur la page. Aucun terme saisi ni centre d'intérêt consulté n'est envoyé au projet pour établir un profil. Les liens vers les articles et organismes s'ouvrent seulement sur action volontaire : ces éditeurs externes appliquent leurs propres politiques.
+
+L'ajout communautaire d'une étude par GitHub Issues est public et facultatif ; **aucun résultat personnel d'analyse, diagnostic, photographie, récit de consultation ou dossier individuel** ne doit être partagé.
+
+## 5. Médias externes
 
 Les vidéos sont proposées **par des liens** ; aucun lecteur YouTube ou autre lecteur tiers n'est chargé sans action de l'utilisateur. En ouvrant un lien, le visiteur quitte ce site et relève des conditions du service externe.
 
-## 5. Réclamation et aide officielle
+## 6. Réclamation et aide officielle
 
 La CNIL explique les droits et les possibilités de réclamation : https://www.cnil.fr/fr/mes-demarches
 
