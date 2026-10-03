@@ -7,19 +7,64 @@
   const status=document.getElementById("resource-status");
   const print=document.getElementById("print-exercise");
   if(print){print.addEventListener("click",()=>window.print());}
-  if(!search||!filter||!list||!status){return;}
 
-  if(!document.getElementById("resource-review-method")){
-    const method=document.createElement("p");
-    method.id="resource-review-method";
-    method.className="small";
-    method.append(document.createTextNode("Une Issue est une proposition, pas une publication automatique. Méthode de concordance : "));
-    const methodLink=document.createElement("a");
-    methodLink.href="le-vendeur-de-kebab.html";
-    methodLink.textContent="Le vendeur de kebab →";
-    method.appendChild(methodLink);
-    status.insertAdjacentElement("afterend",method);
-  }
+  const ensureConcordance=()=>{
+    const resourcesSection=document.getElementById("ressources");
+    if(!resourcesSection||document.getElementById("concordance")){return;}
+
+    const section=document.createElement("section");
+    section.id="concordance";
+    section.className="wrap section";
+
+    const eyebrow=document.createElement("p");
+    eyebrow.className="eyebrow";
+    eyebrow.textContent="Méthode de lecture · Provenance · Concordance";
+
+    const h=document.createElement("h2");
+    h.textContent="Le vendeur de kebab : relier les traces au réel.";
+
+    const lead=document.createElement("p");
+    lead.className="section-lead";
+    lead.textContent="« Le vendeur de kebab » est une expérience de pensée fictive. Elle rappelle qu'une parole, une étiquette, un document ou une URL constitue une trace, mais ne démontre pas automatiquement l'auteur, l'origine, le contenu ou le fait auquel on la rattache. La méthode examine les relations, leur provenance et leur indépendance avant de conclure.";
+
+    const grid=document.createElement("div");
+    grid.className="three-col";
+    const cards=[
+      ["01","Trace","Identifier ce qui existe réellement : déclaration, fichier, URL, objet ou document."],
+      ["02","Provenance","Rechercher d'où vient l'information et distinguer plusieurs copies d'une même source de plusieurs sources réellement indépendantes."],
+      ["03","Qualification","Conserver comme résultat possible une relation établie, divergente, indéterminée ou non recherchée, sans transformer l'incertitude en accusation."]
+    ];
+    for(const [number,title,description] of cards){
+      const article=document.createElement("article");article.className="step";
+      const no=document.createElement("span");no.className="step-no";no.textContent=number;
+      const ch=document.createElement("h3");ch.textContent=title;
+      const cp=document.createElement("p");cp.textContent=description;
+      article.append(no,ch,cp);grid.append(article);
+    }
+
+    const note=document.createElement("div");
+    note.className="note";
+    const strong=document.createElement("strong");strong.textContent="Deux invariants :";
+    note.append(strong,document.createElement("br"),document.createTextNode("TRACE ≠ FAIT"),document.createElement("br"),document.createTextNode("RÉPLICATION DOCUMENTAIRE ≠ CORROBORATION INDÉPENDANTE"));
+
+    const actions=document.createElement("div");actions.className="actions";
+    const conceptLink=document.createElement("a");conceptLink.className="button main-button";conceptLink.href="le-vendeur-de-kebab.html";conceptLink.textContent="Découvrir l'expérience de pensée ↗";
+    const resourceLink=document.createElement("a");resourceLink.className="text-link";resourceLink.href="#ressources";resourceLink.textContent="Voir son application aux ressources →";
+    actions.append(conceptLink,resourceLink);
+
+    section.append(eyebrow,h,lead,grid,note,actions);
+    resourcesSection.insertAdjacentElement("beforebegin",section);
+
+    const nav=document.querySelector(".top nav");
+    if(nav&&!nav.querySelector('a[href="#concordance"]')){
+      const link=document.createElement("a");link.href="#concordance";link.textContent="Concordance";
+      const resourcesLink=nav.querySelector('a[href="#ressources"]');
+      if(resourcesLink){nav.insertBefore(link,resourcesLink);}else{nav.append(link);}
+    }
+  };
+  ensureConcordance();
+
+  if(!search||!filter||!list||!status){return;}
 
   const fallback=list.innerHTML;
   const labels={reference:"Référence",fiche:"Fiche",video:"Vidéo",podcast:"Podcast",article:"Article",course:"Cours"};
