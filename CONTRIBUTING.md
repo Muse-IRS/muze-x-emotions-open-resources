@@ -6,7 +6,9 @@ Toute contribution est facultative. Cette version utilise **GitHub Issues** pour
 
 Une vidéo, un podcast, un article, un cours, une fiche ou un outil qui aide à comprendre les émotions, le recul, les compétences psychosociales ou les contextes concrets d'accompagnement.
 
-Indiquer **titre, auteur, URL canonique, catégorie, langue, résumé factuel, raison pédagogique et droits d'utilisation si connus**. Proposer un lien et des métadonnées : ne pas téléverser une copie d'un média protégé sans autorisation explicite.
+Indiquer **titre, auteur ou chaîne à la source, URL canonique, catégorie, langue, résumé factuel, raison pédagogique et droits d'utilisation si connus**. Proposer un lien et des métadonnées : ne pas téléverser une copie d'un média protégé sans autorisation explicite.
+
+La plateforme d'hébergement n'est pas automatiquement l'auteur. Pour une vidéo, par exemple, indiquer la chaîne ou l'organisme qui la publie plutôt que simplement « YouTube ».
 
 ## Frontière protectrice
 
@@ -14,11 +16,46 @@ Indiquer **titre, auteur, URL canonique, catégorie, langue, résumé factuel, r
 
 Éviter les témoignages personnels même anonymisés : une combinaison de détails peut réidentifier une personne. Utiliser des **situations fictives** pour les exercices. Ne pas envoyer de pièces justificatives en issue ni dans les commits.
 
-## Publication
+## Publication : proposition ≠ ressource publiée
 
-Une proposition ne vaut ni validation scientifique, ni approbation institutionnelle, ni autorisation d'incorporer le média à ce dépôt. La revue porte sur la pertinence, l'accès, la source, la compréhension et la conformité aux droits.
+Une proposition ne vaut ni validation scientifique, ni approbation institutionnelle, ni autorisation d'incorporer le média à ce dépôt. La revue porte sur la pertinence, l'accès, la source, la compréhension, la provenance et la conformité aux droits.
 
-Si la proposition est retenue, elle sera référencée avec provenance et statut éditorial « source externe ». L'éditeur pourra rectifier, compléter ou retirer une entrée devenue erronée, obsolète ou inappropriée, en documentant le motif lorsque c'est possible.
+Le flux public est volontairement borné :
+
+```text
+PROPOSER
+ -> QUALIFIER
+ -> ACCEPTER | DEMANDER_COMPLEMENT | REFUSER
+ -> VERSIONNER
+ -> PUBLIER
+ -> CONSERVER_LA_PROVENANCE
+```
+
+Une Issue GitHub n'est donc **jamais copiée automatiquement** dans `data/resources.json`. Un mainteneur déclenche explicitement la revue à partir du numéro d'Issue. Si les informations sont suffisantes, le catalogue versionné reçoit la ressource et conserve l'URL de l'Issue d'origine. Si une relation est insuffisamment établie, l'Issue reste ouverte et peut être complétée.
+
+La méthode éditoriale publique est expliquée dans [**Le vendeur de kebab**](le-vendeur-de-kebab.html). Ce nom désigne une **expérience de pensée fictive de concordance** : une étiquette, une parole, un document ou une URL sont des traces ; ils ne démontrent pas automatiquement l'auteur, le contenu, l'origine ou le fait auxquels on les rattache.
+
+```text
+TRACE != FAIT
+TRACE + FAIT != RELATION_ETABLIE_ENTRE_TRACE_ET_FAIT
+```
+
+Cette méthode ne vise aucun commerce, métier ou individu réel et ne présume aucune fraude. Elle sert uniquement à borner ce que les traces disponibles permettent réellement d'affirmer.
+
+Si la proposition est retenue, elle est référencée avec provenance et statut éditorial « source externe ». L'éditeur pourra rectifier, compléter ou retirer une entrée devenue erronée, obsolète ou inappropriée, en documentant le motif lorsque c'est possible.
+
+### Revue par un mainteneur
+
+Le workflow GitHub Actions **Qualify and publish resource proposal** est déclenché manuellement avec un numéro d'Issue. Il vérifie notamment :
+
+- les champs indispensables ;
+- une URL source en HTTPS ;
+- une catégorie reconnue ;
+- la présence d'une langue ;
+- la distinction minimale entre plateforme d'hébergement et créateur déclaré ;
+- l'absence de doublon d'URL ou d'Issue déjà publiée.
+
+Cette vérification est un **garde-fou de structure et de provenance**, pas une preuve scientifique du contenu externe. La revue humaine reste nécessaire avant de déclencher la publication.
 
 ## Code et contenus
 
