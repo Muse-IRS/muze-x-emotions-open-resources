@@ -7,6 +7,8 @@ body:
     attributes:
       value: |
         ⚠️ **Formulaire public.** Tout contenu soumis sera visible sur Internet, associé à votre compte GitHub. Ne renseignez aucune donnée personnelle, confidentielle, médicale ou relative à un allocataire RSA ; aucun témoignage de bénéficiaire.
+
+        Une proposition n'est pas publiée automatiquement. Elle passe par une revue de provenance et de concordance expliquée dans **« Le vendeur de kebab »** : https://muse-irs.github.io/muze-x-emotions-open-resources/le-vendeur-de-kebab.html
   - type: input
     id: title
     attributes:
@@ -24,7 +26,9 @@ body:
   - type: input
     id: creator
     attributes:
-      label: Auteur ou organisme public
+      label: Auteur, chaîne ou organisme à la source
+      description: Indiquez la personne, la chaîne ou l'organisme qui publie réellement la ressource. Une plateforme d'hébergement comme YouTube n'est généralement pas l'auteur.
+      placeholder: Nom de l'auteur, de la chaîne ou de l'organisme
     validations:
       required: true
   - type: dropdown
@@ -38,6 +42,14 @@ body:
         - Fiche
         - Cours
         - Autre
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Langue
+      description: Code ou nom de langue de la ressource originale.
+      placeholder: fr
     validations:
       required: true
   - type: textarea
