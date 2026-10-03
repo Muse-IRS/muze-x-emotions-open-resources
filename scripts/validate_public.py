@@ -99,8 +99,11 @@ assert "gh issue comment" in workflow
 assert "git push origin HEAD:main" in workflow
 
 # Guard against unintentionally publishing private research or case files.
+validator_path = Path(__file__).resolve()
 for path in Path(".").rglob("*"):
     if ".git" in path.parts or not path.is_file():
+        continue
+    if path.resolve() == validator_path:
         continue
     assert path.suffix.lower() not in {".zip", ".pdf", ".xlsx", ".docx", ".har"}
     if path.suffix.lower() in {".html", ".js", ".mjs", ".css", ".json", ".md", ".yml", ".py"}:
