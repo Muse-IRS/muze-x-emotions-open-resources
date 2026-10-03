@@ -6,7 +6,7 @@
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#315f55"/>
     </marker>
     <style>
-      .bg{fill:#f8fbf8}.panel{fill:#ffffff;stroke:#c7d9d0;stroke-width:2}.dependency{fill:#eef7f2;stroke:#4c756b;stroke-width:2.5;stroke-dasharray:10 8}.node{fill:#ffffff;stroke:#245f53;stroke-width:3}.event{fill:#f6e9c8;stroke:#7b6834;stroke-width:3}.copy{fill:#f7fbf9;stroke:#4d746a;stroke-width:2.5}.independent{fill:#f4f1fb;stroke:#6b5f86;stroke-width:2.5;stroke-dasharray:8 7}.edge{fill:none;stroke:#315f55;stroke-width:3;marker-end:url(#arrow)}.double{marker-start:url(#arrow)}.thin{stroke-width:2.2}.dashed{stroke-dasharray:8 7}.title{font:700 30px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#18332e}.subtitle{font:500 17px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#4c645d}.label{font:700 21px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#18332e}.small{font:500 15px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#4c645d}.edgeLabel{font:600 15px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#315f55}.mono{font:600 15px ui-monospace,SFMono-Regular,Consolas,monospace;fill:#2a4e45}.legendTitle{font:700 16px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#18332e}.legend{font:500 14px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#4c645d}
+      .bg{fill:#f8fbf8}.panel{fill:#ffffff;stroke:#c7d9d0;stroke-width:2}.dependency{fill:#eef7f2;stroke:#4c756b;stroke-width:2.5;stroke-dasharray:10 8}.node{fill:#ffffff;stroke:#245f53;stroke-width:3}.event{fill:#f6e9c8;stroke:#7b6834;stroke-width:3}.copy{fill:#f7fbf9;stroke:#4d746a;stroke-width:2.5}.independent{fill:#f4f1fb;stroke:#6b5f86;stroke-width:2.5;stroke-dasharray:8 7}.edge{fill:none;stroke:#315f55;stroke-width:3;marker-end:url(#arrow)}.double{marker-start:url(#arrow)}.thin{stroke-width:2.2}.title{font:700 30px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#18332e}.subtitle{font:500 17px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#4c645d}.label{font:700 21px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#18332e}.small{font:500 15px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#4c645d}.edgeLabel{font:600 15px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#315f55}.mono{font:600 15px ui-monospace,SFMono-Regular,Consolas,monospace;fill:#2a4e45}.legendTitle{font:700 16px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#18332e}.legend{font:500 14px ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#4c645d}
     </style>
   </defs>
 
@@ -14,30 +14,25 @@
   <text class="title" x="60" y="58">Le vendeur de kebab — graphe de provenance</text>
   <text class="subtitle" x="60" y="88">Réplication documentaire, dépendance informationnelle et corroboration indépendante</text>
 
-  <!-- Event node -->
   <rect class="event" x="70" y="265" width="235" height="112" rx="18"/>
   <text class="label" x="187.5" y="306" text-anchor="middle">Événement allégué E</text>
   <text class="small" x="187.5" y="337" text-anchor="middle">fait à établir</text>
   <text class="small" x="187.5" y="361" text-anchor="middle">≠ document qui l’affirme</text>
 
-  <!-- dependency class -->
   <rect class="dependency" x="390" y="150" width="520" height="480" rx="28"/>
   <text class="legendTitle" x="420" y="184">Classe de dépendance informationnelle [D]</text>
   <text class="mono" x="420" y="210">[D] = {D, D_A, D_B, D_C}</text>
 
-  <!-- Source document -->
   <rect class="node" x="525" y="245" width="250" height="118" rx="18"/>
   <text class="label" x="650" y="288" text-anchor="middle">Document-source D</text>
   <text class="small" x="650" y="319" text-anchor="middle">D existe</text>
   <text class="small" x="650" y="344" text-anchor="middle">D affirme E</text>
 
-  <!-- bidirectional relation -->
   <path class="edge double" d="M305 321 C360 321 420 304 525 304"/>
   <rect class="panel" x="315" y="246" width="198" height="50" rx="12"/>
   <text class="edgeLabel" x="414" y="267" text-anchor="middle">relation à qualifier</text>
   <text class="mono" x="414" y="287" text-anchor="middle">R(D,E)</text>
 
-  <!-- Copies -->
   <rect class="copy" x="425" y="470" width="130" height="86" rx="16"/>
   <rect class="copy" x="585" y="470" width="130" height="86" rx="16"/>
   <rect class="copy" x="745" y="470" width="130" height="86" rx="16"/>
@@ -48,7 +43,6 @@
   <text class="label" x="810" y="508" text-anchor="middle">D_C</text>
   <text class="small" x="810" y="535" text-anchor="middle">copie / variante</text>
 
-  <!-- provenance edges -->
   <path class="edge thin" d="M620 363 C590 405 540 425 500 470"/>
   <path class="edge thin" d="M650 363 L650 470"/>
   <path class="edge thin" d="M680 363 C710 405 760 425 800 470"/>
@@ -56,21 +50,18 @@
   <text class="mono" x="650" y="442" text-anchor="middle">π(D_B)=D</text>
   <text class="mono" x="797" y="424" text-anchor="middle">π(D_C)=D</text>
 
-  <!-- dependency equivalence -->
   <path d="M490 585 H810" stroke="#4c756b" stroke-width="2" stroke-dasharray="6 6"/>
   <text class="mono" x="650" y="608" text-anchor="middle">D_A ~ D_B ~ D_C</text>
 
-  <!-- Metrics panel -->
   <rect class="panel" x="945" y="150" width="205" height="240" rx="18"/>
   <text class="legendTitle" x="970" y="184">Lecture quantitative</text>
   <text class="mono" x="970" y="222">N(fichiers) = 4</text>
   <text class="mono" x="970" y="256">N(classes) = 1</text>
-  <text class="mono" x="970" y="290">N(sources ind.) = 1*</text>
-  <text class="legend" x="970" y="325">* dans ce graphe, aucune</text>
-  <text class="legend" x="970" y="347">seconde voie indépendante</text>
-  <text class="legend" x="970" y="369">n’est encore établie.</text>
+  <text class="mono" x="970" y="290">N(sources info.) = 1</text>
+  <text class="legend" x="970" y="326">Corroboration indépendante :</text>
+  <text class="mono" x="970" y="352">NON ÉTABLIE</text>
+  <text class="legend" x="970" y="375">Aucune seconde voie autonome.</text>
 
-  <!-- independent corroboration condition -->
   <rect class="independent" x="945" y="430" width="205" height="200" rx="18"/>
   <text class="legendTitle" x="970" y="466">Condition de corroboration</text>
   <text class="mono" x="970" y="502">S₂ → E</text>
@@ -79,7 +70,6 @@
   <text class="legend" x="970" y="601">Une nouvelle copie de D</text>
   <text class="legend" x="970" y="622">ne satisfait pas cette condition.</text>
 
-  <!-- bottom invariant -->
   <rect class="panel" x="70" y="665" width="1080" height="58" rx="16"/>
   <text class="mono" x="600" y="701" text-anchor="middle">RÉPLICATION DOCUMENTAIRE ≠ CORROBORATION INDÉPENDANTE · N(FICHIERS) ≠ N(SOURCES) ≠ N(OBSERVATIONS INDÉPENDANTES)</text>
 </svg>
