@@ -1,0 +1,93 @@
+name: Qualify and publish resource proposal
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Numéro de l'issue ressource à examiner"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: resource-publication
+  cancel-in-progress: false
+
+jobs:
+  qualify-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Read proposed resource issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}" > resource-issue.json
+
+      - name: Qualify proposal with the public concordance gate
+        id: qualify
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python3 scripts/process_resource_issue.py \
+            --issue-json resource-issue.json \
+            --catalog data/resources.json 2>&1 | tee qualification.txt
+
+      - name: Request missing information
+        if: steps.qualify.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          {
+            echo '### Qualification de la proposition'
+            echo
+            echo 'La ressource n’est pas publiée automatiquement. Le contrôle de concordance public « Le vendeur de kebab » a identifié des informations à compléter ou une relation insuffisamment établie :'
+            echo
+            echo '```text'
+            cat qualification.txt
+            echo '```'
+            echo
+            echo 'Vous pouvez modifier l’issue puis relancer la revue. Cette qualification ne signifie pas que la ressource est fausse ou rejetée.'
+            echo
+            echo 'Méthode : https://muse-irs.github.io/muze-x-emotions-open-resources/le-vendeur-de-kebab.html'
+          } > qualification-comment.md
+          gh issue comment "$ISSUE_NUMBER" --body-file qualification-comment.md
+
+      - name: Stop publication when qualification is incomplete
+        if: steps.qualify.outcome == 'failure'
+        run: exit 1
+
+      - name: Validate public boundary
+        run: python3 scripts/validate_public.py
+
+      - name: Commit catalog publication
+        env:
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/resources.json
+          git diff --cached --quiet && { echo 'No catalog change to publish.'; exit 1; }
+          git commit -m "resources: publish proposal #${ISSUE_NUMBER}"
+          git push origin HEAD:main
+
+      - name: Trace successful publication in the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "### Proposition publiée\n\nLa proposition a franchi la revue de concordance et a été ajoutée au catalogue versionné. La publication conserve un lien vers cette issue comme provenance.\n\nPublication ≠ validation scientifique de l’ensemble du contenu. Les médias externes restent consultés sur leur site d’origine.\n\nMéthode : https://muse-irs.github.io/muze-x-emotions-open-resources/le-vendeur-de-kebab.html"
+          gh issue close "$ISSUE_NUMBER" --reason completed
