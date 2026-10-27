@@ -60,7 +60,7 @@ for page in HTML_PAGES:
 
 concept = Path("le-nomisma-de-diogene.html").read_text(encoding="utf-8")
 for marker in (
-    "Le Nomisma de Diogène", "expérience de pensée fictive", "TRACE ≠ FAIT",
+    "Le Nomisma de Diogène", "expérience de pensée Muze-X", "TRACE ≠ FAIT",
     "PROPOSER → QUALIFIER", "plateforme d’hébergement",
 ):
     assert marker in concept, f"Missing public concordance explanation: {marker}"
