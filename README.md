@@ -102,7 +102,11 @@ Ce dépôt public est **autonome**. Il ne duplique aucun dépôt privé, aucun d
 Le concept **Le Nomisma de Diogène** est également appliqué dans l’observatoire public du logement social :
 
 - page conceptuelle générale : `le-nomisma-de-diogene.html` ;
-- application logement : `https://muse-irs.github.io/ardeche-habitat-sc-amplitudes-observatoire-public/information/le-nomisma-de-diogene.html` ;
-- invariant transversal : `VALEUR_DE_CIRCULATION != VALEUR_PROBATOIRE` et `REPLICATION_DOCUMENTAIRE != CORROBORATION_INDEPENDANTE`.
+- alias historique de compatibilité uniquement : `le-vendeur-de-kebab.html -> le-nomisma-de-diogene.html` ;
+- application documentaire au logement : `https://muse-irs.github.io/ardeche-habitat-sc-amplitudes-observatoire-public/information/le-nomisma-de-diogene.html` ;
+- carte d’identité technique : `https://muse-irs.github.io/ardeche-habitat-sc-amplitudes-observatoire-public/identite-logement/` ;
+- invariants transversaux : `VALEUR_DE_CIRCULATION != VALEUR_PROBATOIRE`, `NOM_DONNE != NATURE_ETABLIE`, `DOCUMENT_ASSERTS_EVENT != EVENT_OCCURRED` et `REPLICATION_DOCUMENTAIRE != CORROBORATION_INDEPENDANTE`.
 
-Cette relation est un lien entre deux projections publiques indépendantes ; elle ne fusionne pas leurs données, leurs responsabilités éditoriales ni leurs corpus.
+La page canonique ne reprend plus l’ancien exemple du kebab comme support actif : le nom antérieur reste une trace historique et une URL de compatibilité, pas un second concept courant.
+
+Cette relation est un lien entre projections publiques indépendantes ; elle ne fusionne pas leurs données, leurs responsabilités éditoriales ni leurs corpus.
