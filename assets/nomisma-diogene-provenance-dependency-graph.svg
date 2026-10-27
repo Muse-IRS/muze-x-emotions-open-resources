@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Le vendeur de kebab — provenance et dépendance informationnelle</title>
+  <title id="title">Le Nomisma de Diogène — provenance et dépendance informationnelle</title>
   <desc id="desc">Graphe scientifique montrant un événement allégué E relié à un document-source D, puis trois copies D_A, D_B et D_C dérivées de D. D et ses copies appartiennent à une même classe de dépendance informationnelle. Un encart rappelle qu'une corroboration indépendante exige une autre source qui ne dérive pas de D.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -11,7 +11,7 @@
   </defs>
 
   <rect class="bg" width="1200" height="760" rx="24"/>
-  <text class="title" x="60" y="58">Le vendeur de kebab — graphe de provenance</text>
+  <text class="title" x="60" y="58">Le Nomisma de Diogène — graphe de provenance</text>
   <text class="subtitle" x="60" y="88">Réplication documentaire, dépendance informationnelle et corroboration indépendante</text>
 
   <rect class="event" x="70" y="265" width="235" height="112" rx="18"/>

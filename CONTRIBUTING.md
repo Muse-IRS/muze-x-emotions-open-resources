@@ -33,7 +33,7 @@ PROPOSER
 
 Une Issue GitHub n'est donc **jamais copiée automatiquement** dans `data/resources.json`. Un mainteneur déclenche explicitement la revue à partir du numéro d'Issue. Si les informations sont suffisantes, le catalogue versionné reçoit la ressource et conserve l'URL de l'Issue d'origine. Si une relation est insuffisamment établie, l'Issue reste ouverte et peut être complétée.
 
-La méthode éditoriale publique est expliquée dans [**Le vendeur de kebab**](le-vendeur-de-kebab.html). Ce nom désigne une **expérience de pensée fictive de concordance** : une étiquette, une parole, un document ou une URL sont des traces ; ils ne démontrent pas automatiquement l'auteur, le contenu, l'origine ou le fait auxquels on les rattache.
+La méthode éditoriale publique est expliquée dans [**Le Nomisma de Diogène**](le-nomisma-de-diogene.html). Ce nom désigne une **expérience de pensée sur la trace, la valeur, la convention et la réalité** : une étiquette, une parole, un document ou une URL sont des traces ; ils ne démontrent pas automatiquement l'auteur, le contenu, l'origine ou le fait auxquels on les rattache.
 
 ```text
 TRACE != FAIT

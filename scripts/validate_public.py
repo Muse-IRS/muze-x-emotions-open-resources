@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 REQUIRED = [
     "README.md", "LICENSE", "CONTENT_LICENSE.md", "NOTICE.md",
     "VALUES.md", "DATA_RIGHTS.md", "CONTRIBUTING.md", "SECURITY.md",
-    "index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html", "le-vendeur-de-kebab.html", "assets/styles.css",
+    "index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html", "le-nomisma-de-diogene.html", "le-vendeur-de-kebab.html", "assets/styles.css",
     "assets/pensees.css", "assets/pensees.js", "data/pensees.json",
     "assets/recherche.css", "assets/recherche.js", "data/recherche.json", "RESEARCH_POLICY.md",
     "champ-emotionnel.html", "assets/champ-emotionnel.css",
@@ -43,7 +43,7 @@ class PublicHTML(HTMLParser):
 
 HTML_PAGES = (
     "index.html", "privacy.html", "valeurs.html", "pensees.html", "recherche.html",
-    "champ-emotionnel.html", "le-vendeur-de-kebab.html",
+    "champ-emotionnel.html", "le-nomisma-de-diogene.html",
 )
 for page in HTML_PAGES:
     text = Path(page).read_text(encoding="utf-8")
@@ -58,9 +58,9 @@ for page in HTML_PAGES:
             continue
         assert Path(link.split("#")[0]).is_file(), (page, link)
 
-concept = Path("le-vendeur-de-kebab.html").read_text(encoding="utf-8")
+concept = Path("le-nomisma-de-diogene.html").read_text(encoding="utf-8")
 for marker in (
-    "Le vendeur de kebab", "expérience de pensée fictive", "TRACE ≠ FAIT",
+    "Le Nomisma de Diogène", "expérience de pensée fictive", "TRACE ≠ FAIT",
     "PROPOSER → QUALIFIER", "plateforme d’hébergement",
 ):
     assert marker in concept, f"Missing public concordance explanation: {marker}"

@@ -21,11 +21,11 @@
     eyebrow.textContent="Méthode de lecture · Provenance · Concordance";
 
     const h=document.createElement("h2");
-    h.textContent="Le vendeur de kebab : relier les traces au réel.";
+    h.textContent="Le Nomisma de Diogène : trace, valeur, convention et réalité.";
 
     const lead=document.createElement("p");
     lead.className="section-lead";
-    lead.textContent="« Le vendeur de kebab » est une expérience de pensée fictive. Elle rappelle qu'une parole, une étiquette, un document ou une URL constitue une trace, mais ne démontre pas automatiquement l'auteur, l'origine, le contenu ou le fait auquel on la rattache. La méthode examine les relations, leur provenance et leur indépendance avant de conclure.";
+    lead.textContent="« Le Nomisma de Diogène » est une expérience de pensée fictive. Elle rappelle qu'une parole, une étiquette, un document ou une URL constitue une trace, mais ne démontre pas automatiquement l'auteur, l'origine, le contenu ou le fait auquel on la rattache. La méthode examine les relations, leur provenance et leur indépendance avant de conclure.";
 
     const grid=document.createElement("div");
     grid.className="three-col";
@@ -48,7 +48,7 @@
     note.append(strong,document.createElement("br"),document.createTextNode("TRACE ≠ FAIT"),document.createElement("br"),document.createTextNode("RÉPLICATION DOCUMENTAIRE ≠ CORROBORATION INDÉPENDANTE"));
 
     const actions=document.createElement("div");actions.className="actions";
-    const conceptLink=document.createElement("a");conceptLink.className="button main-button";conceptLink.href="le-vendeur-de-kebab.html";conceptLink.textContent="Découvrir l'expérience de pensée ↗";
+    const conceptLink=document.createElement("a");conceptLink.className="button main-button";conceptLink.href="le-nomisma-de-diogene.html";conceptLink.textContent="Découvrir l'expérience de pensée ↗";
     const resourceLink=document.createElement("a");resourceLink.className="text-link";resourceLink.href="#ressources";resourceLink.textContent="Voir son application aux ressources →";
     actions.append(conceptLink,resourceLink);
 

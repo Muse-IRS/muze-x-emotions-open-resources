@@ -8,7 +8,7 @@ body:
       value: |
         ⚠️ **Formulaire public.** Tout contenu soumis sera visible sur Internet, associé à votre compte GitHub. Ne renseignez aucune donnée personnelle, confidentielle, médicale ou relative à un allocataire RSA ; aucun témoignage de bénéficiaire.
 
-        Une proposition n'est pas publiée automatiquement. Elle passe par une revue de provenance et de concordance expliquée dans **« Le vendeur de kebab »** : https://muse-irs.github.io/muze-x-emotions-open-resources/le-vendeur-de-kebab.html
+        Une proposition n'est pas publiée automatiquement. Elle passe par une revue de provenance et de concordance expliquée dans **« Le Nomisma de Diogène »** : https://muse-irs.github.io/muze-x-emotions-open-resources/le-nomisma-de-diogene.html
   - type: input
     id: title
     attributes:
