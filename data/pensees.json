@@ -1,7 +1,7 @@
 {
-  "version": "0.2.0",
-  "date": "2026-09-26",
-  "scope": "Introduction évolutive et non exhaustive. Sources anciennes, synthèses académiques et approches cliniques doivent rester distinctes.",
+  "version": "0.3.0",
+  "date": "2026-10-27",
+  "scope": "Introduction évolutive et non exhaustive. Sources anciennes, synthèses académiques, perspectives interprétatives contemporaines et approches cliniques doivent rester distinctes.",
   "entries": [
     {
       "id": "ptahhotep",
@@ -533,6 +533,27 @@
       "source": {
         "title": "Institut C. G. Jung de Zurich — Présentation",
         "url": "https://junginstitut.ch/en/About-Us/Mission-statement"
+      }
+    },
+    {
+      "id": "justine-engels",
+      "title": "Justine Engels : psychologie analytique contemporaine",
+      "region": "Francophonie",
+      "period": "XXIe siècle",
+      "family": "Psychologie analytique",
+      "topics": [
+        "rêves",
+        "archétypes",
+        "inconscient",
+        "identité",
+        "émotions"
+      ],
+      "question": "Comment une perspective jungienne contemporaine lit-elle les rêves, les symboles et l'individuation ?",
+      "summary": "Ressource contemporaine francophone consacrée à la psychologie analytique jungienne, aux rêves, archétypes, symboles et processus d'individuation.",
+      "limit": "Perspective interprétative et pédagogique : ne constitue ni validation scientifique des concepts, ni diagnostic, ni recommandation clinique. Certains contenus adjacents relèvent aussi du symbolisme ou de traditions ésotériques et doivent rester distingués.",
+      "source": {
+        "title": "Justine Engels — Archétypes & rêves",
+        "url": "https://engelsjustine.com/"
       }
     },
     {
