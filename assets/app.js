@@ -25,7 +25,7 @@
 
     const lead=document.createElement("p");
     lead.className="section-lead";
-    lead.textContent="« Le Nomisma de Diogène » est une expérience de pensée fictive. Elle rappelle qu'une parole, une étiquette, un document ou une URL constitue une trace, mais ne démontre pas automatiquement l'auteur, l'origine, le contenu ou le fait auquel on la rattache. La méthode examine les relations, leur provenance et leur indépendance avant de conclure.";
+    lead.textContent="« Le Nomisma de Diogène » est une expérience de pensée Muze-X : ce qui circule, porte une valeur ou est admis par un système n’est pas automatiquement établi dans le réel. Une parole, une étiquette, un document ou une URL constitue une trace ; la méthode qualifie ensuite la relation, la provenance, la temporalité et l’indépendance des sources.";
 
     const grid=document.createElement("div");
     grid.className="three-col";
@@ -45,12 +45,13 @@
     const note=document.createElement("div");
     note.className="note";
     const strong=document.createElement("strong");strong.textContent="Deux invariants :";
-    note.append(strong,document.createElement("br"),document.createTextNode("TRACE ≠ FAIT"),document.createElement("br"),document.createTextNode("RÉPLICATION DOCUMENTAIRE ≠ CORROBORATION INDÉPENDANTE"));
+    note.append(strong,document.createElement("br"),document.createTextNode("TRACE ≠ FAIT"),document.createElement("br"),document.createTextNode("VALEUR DE CIRCULATION ≠ VALEUR PROBATOIRE"),document.createElement("br"),document.createTextNode("RÉPLICATION DOCUMENTAIRE ≠ CORROBORATION INDÉPENDANTE"));
 
     const actions=document.createElement("div");actions.className="actions";
     const conceptLink=document.createElement("a");conceptLink.className="button main-button";conceptLink.href="le-nomisma-de-diogene.html";conceptLink.textContent="Découvrir l'expérience de pensée ↗";
     const resourceLink=document.createElement("a");resourceLink.className="text-link";resourceLink.href="#ressources";resourceLink.textContent="Voir son application aux ressources →";
-    actions.append(conceptLink,resourceLink);
+    const housingLink=document.createElement("a");housingLink.className="text-link";housingLink.href="https://muse-irs.github.io/ardeche-habitat-sc-amplitudes-observatoire-public/information/le-nomisma-de-diogene.html";housingLink.target="_blank";housingLink.rel="noopener noreferrer";housingLink.referrerPolicy="no-referrer";housingLink.textContent="Voir l’application logement social ↗";
+    actions.append(conceptLink,resourceLink,housingLink);
 
     section.append(eyebrow,h,lead,grid,note,actions);
     resourcesSection.insertAdjacentElement("beforebegin",section);

@@ -95,3 +95,14 @@ Ce dépôt public est **autonome**. Il ne duplique aucun dépôt privé, aucun d
 ## État du projet
 
 **Version 0.4.0 — démonstrateur pédagogique, atlas philosophique, centre de recherche et champ visuel autonome.** Les hypothèses exploratoires restent révisables ; aucune efficacité d'intervention ni validation clinique n'est revendiquée.
+
+
+## Application publique sectorielle du Nomisma
+
+Le concept **Le Nomisma de Diogène** est également appliqué dans l’observatoire public du logement social :
+
+- page conceptuelle générale : `le-nomisma-de-diogene.html` ;
+- application logement : `https://muse-irs.github.io/ardeche-habitat-sc-amplitudes-observatoire-public/information/le-nomisma-de-diogene.html` ;
+- invariant transversal : `VALEUR_DE_CIRCULATION != VALEUR_PROBATOIRE` et `REPLICATION_DOCUMENTAIRE != CORROBORATION_INDEPENDANTE`.
+
+Cette relation est un lien entre deux projections publiques indépendantes ; elle ne fusionne pas leurs données, leurs responsabilités éditoriales ni leurs corpus.
