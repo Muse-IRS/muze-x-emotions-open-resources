@@ -1,5 +1,5 @@
 {
-  "version": "0.2.1",
+  "version": "0.2.2",
   "verified_on": "2026-10-29",
   "note": "Catalogue de métadonnées et liens, non reproduction ni validation intégrale de sources externes. Les médias externes ne sont jamais chargés automatiquement.",
   "resources": [
@@ -85,6 +85,57 @@
       ],
       "description": "Podcast francophone de vulgarisation philosophique. Charles Robin présente des auteurs, des courants et des questions contemporaines pour inviter à la réflexion personnelle. Ressource pédagogique externe : chaque épisode conserve le point de vue de son auteur et demande une lecture critique des références.",
       "rights": "Lien vers Apple Podcasts uniquement ; aucun son, texte ni visuel tiers reproduit ou embarqué. Les droits restent ceux des titulaires.",
+      "status": "SOURCE_EXTERNE"
+    },
+    {
+      "id": "justine-engels-podcast-integral",
+      "kind": "podcast",
+      "title": "Psychanalyse Jungienne avec Justine Engels — émission complète",
+      "creator": "Justine Engels",
+      "url": "https://podcasts.apple.com/fr/podcast/psychanalyse-jungienne-avec-justine-engels/id1530940254",
+      "language": "fr",
+      "topics": [
+        "psychologie analytique",
+        "Jung",
+        "rêves",
+        "individuation"
+      ],
+      "description": "Accès à l'ensemble des épisodes publics de l'émission depuis la page générale Apple Podcasts. Présentation jungienne à visée pédagogique et interprétative ; la présence au catalogue n'atteste pas les hypothèses abordées.",
+      "rights": "Lien vers l'émission intégrale sur le site source ; aucun épisode, son ou visuel tiers copié ni intégré.",
+      "status": "PERSPECTIVE_INTERPRETATIVE"
+    },
+    {
+      "id": "justine-engels-chaine-youtube",
+      "kind": "video",
+      "title": "Justine Engels — chaîne YouTube principale",
+      "creator": "Justine Engels",
+      "url": "https://www.youtube.com/@justineengels",
+      "language": "fr",
+      "topics": [
+        "psychologie analytique",
+        "rêves",
+        "archétypes",
+        "symbolisme"
+      ],
+      "description": "Chaîne vidéo complète de Justine Engels : parcours libre de ses contenus sur la psychologie analytique, les rêves, mythes et symboles ; point de vue interprétatif distinct de la recherche expérimentale.",
+      "rights": "Lien externe vers la chaîne complète ; aucun contenu YouTube copié ni embarqué ; droits des créateurs conservés.",
+      "status": "PERSPECTIVE_INTERPRETATIVE"
+    },
+    {
+      "id": "le-precepteur-chaine-youtube",
+      "kind": "video",
+      "title": "Le Précepteur — chaîne YouTube principale",
+      "creator": "Charles Robin (Le Précepteur)",
+      "url": "https://www.youtube.com/@Le_Precepteur",
+      "language": "fr",
+      "topics": [
+        "philosophie",
+        "vulgarisation",
+        "auteurs",
+        "pensée critique"
+      ],
+      "description": "Chaîne vidéo complète de vulgarisation philosophique créée par Charles Robin, proposant des présentations de philosophes et des réflexions accessibles à un large public. Les idées restent à confronter aux sources originales.",
+      "rights": "Lien externe vers la chaîne complète ; aucun contenu YouTube copié ni embarqué ; droits des créateurs conservés.",
       "status": "SOURCE_EXTERNE"
     }
   ]
