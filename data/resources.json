@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0",
-  "verified_on": "2026-10-27",
+  "version": "0.2.1",
+  "verified_on": "2026-10-29",
   "note": "Catalogue de métadonnées et liens, non reproduction ni validation intégrale de sources externes. Les médias externes ne sont jamais chargés automatiquement.",
   "resources": [
     {
@@ -68,6 +68,24 @@
       "description": "Ressource externe francophone sur la psychologie analytique jungienne. Perspective interprétative et pédagogique ; ne vaut ni validation scientifique des concepts, ni diagnostic, ni recommandation clinique.",
       "rights": "Lien vers le site source uniquement ; aucun contenu tiers reproduit.",
       "status": "PERSPECTIVE_INTERPRETATIVE"
+    },
+    {
+      "id": "le-precepteur-philosophie-pour-tous",
+      "kind": "podcast",
+      "title": "Philosophie pour tous — Le Précepteur",
+      "creator": "Charles Robin (Le Précepteur)",
+      "url": "https://podcasts.apple.com/fr/podcast/philosophie-pour-tous/id1534272032",
+      "language": "fr",
+      "topics": [
+        "philosophie",
+        "pensée critique",
+        "connaissance de soi",
+        "questionnement",
+        "autonomie"
+      ],
+      "description": "Podcast francophone de vulgarisation philosophique. Charles Robin présente des auteurs, des courants et des questions contemporaines pour inviter à la réflexion personnelle. Ressource pédagogique externe : chaque épisode conserve le point de vue de son auteur et demande une lecture critique des références.",
+      "rights": "Lien vers Apple Podcasts uniquement ; aucun son, texte ni visuel tiers reproduit ou embarqué. Les droits restent ceux des titulaires.",
+      "status": "SOURCE_EXTERNE"
     }
   ]
 }
