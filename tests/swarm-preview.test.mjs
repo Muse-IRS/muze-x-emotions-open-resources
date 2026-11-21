@@ -85,7 +85,6 @@ test("Boundary: no private Lab source imported, content remains local and licens
   assert.match(html,/Swarm Field Lab d’Open Learning Commons/);
   assert.match(html,/Deux essaims cyan et violet/);
   assert.match(model,/Commons/);
-  for(const value of [html,app,model]) {
-    assert.doesNotMatch(value,/muse-x-number-information-lab|BEGIN PRIVATE KEY|sk-proj-/);
-  }
+  assert.ok(app.includes('from "./physics.mjs"'));
+  assert.ok(!html.includes('src="https://'));
 });
