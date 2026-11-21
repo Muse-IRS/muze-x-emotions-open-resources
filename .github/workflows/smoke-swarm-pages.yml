@@ -1,0 +1,40 @@
+name: Diagnostic SWARM GitHub Pages external URL
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/smoke-swarm-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify public SWARM and its two local imports
+        shell: bash
+        run: |
+          set -eu
+          origin="https://muse-irs.github.io/muze-x-emotions-open-resources/swarm/"
+          for item in "" "index.html" "styles.css" "app.mjs" "physics.mjs"; do
+            ok=0
+            for attempt in $(seq 1 12); do
+              code="$(curl --silent --show-error --location --max-time 12 --output /tmp/swarm-site-response --write-out '%{http_code}' "$origin$item" || true)"
+              printf 'PATH=%s ATTEMPT=%s STATUS=%s\n' "${item:-/}" "$attempt" "$code"
+              if [ "$code" = "200" ]; then
+                if [ -z "$item" ] || [ "$item" = "index.html" ]; then
+                  if grep -q 'Open Learning' /tmp/swarm-site-response && grep -q 'swarm-canvas' /tmp/swarm-site-response; then ok=1; break; fi
+                  echo "HTML does not contain SWARM content"
+                else
+                  if [ -s /tmp/swarm-site-response ]; then ok=1; break; fi
+                fi
+              fi
+              sleep 10
+            done
+            if [ "$ok" -ne 1 ]; then
+              echo "::error::Public SWARM path did not become accessible: $origin$item"
+              exit 1
+            fi
+          done
+          echo "SWARM Pages HTTPS URL AND 4 STATIC FILES = VERIFIED"
