@@ -66,8 +66,8 @@
       <div class="field-info">
         <p id="swarm-status" role="status">L’animation nécessite JavaScript et Canvas 2D. La méthode est accessible dans le cercle.</p>
         <ul class="legend" aria-label="Couleurs des essaims">
-          <li><span class="swatches global" aria-hidden="true"></span>Globaux</li>
-          <li><span class="swatches local" aria-hidden="true"></span>Locaux</li>
+          <li><span class="swatches cyan" aria-hidden="true"></span>Essaim cyan · groupe A</li>
+          <li><span class="swatches violet" aria-hidden="true"></span>Essaim violet · groupe B</li>
         </ul>
       </div>
       <p id="field-hint" hidden>Dans le rectangle, touchez et glissez pour agir sur le champ. Au clavier, utilisez Tab puis les flèches et Échap pour annuler le point.</p>
@@ -76,7 +76,8 @@
     <section class="method" id="architecture" tabindex="-1" aria-labelledby="method-title">
       <h2 id="method-title">Méthode</h2>
       <div>
-        <p>Le champ met à jour des positions et des vitesses à valeurs continues sous l’effet de forces locales. Dans un automate cellulaire, chaque cellule d’une grille prend un état discret qui évolue par pas de temps selon des règles de voisinage.</p>
+        <p>Deux essaims cyan et violet interagissent avec le geste : attraction et dispersion selon la position, rotation opposée en vortex. L’ancre centrale influence les orbites vers son contour. Les populations globale et locale partagent ces deux couleurs ; elles n’ajoutent pas de troisième ou quatrième essaim.</p>
+        <p>Adaptation du <a href="https://github.com/Muse-IRS/muze-x-open-learning-commons/blob/7b423d9a6d415c5f84c04fa1caa037dfe169ac37/public/assets/swarm.js" rel="noopener noreferrer">Swarm Field Lab d’Open Learning Commons</a> (code Apache-2.0), intégrée au moteur SWARM actuel. Le champ met à jour des positions et vitesses continues ; cela ne démontre pas un automate cellulaire discret. Le calcul est une simulation graphique et non une expérience physique validée.</p>
         <p>Les gestes agissent uniquement sur une simulation locale. La profondeur est perceptive (Canvas 2D, lumière et perspective CSS), pas un modèle physique 3D. Les sept repères PRIME à CRYPTO sont décoratifs : aucun moteur financier, cryptographique ou Number Lab n’est publié ici.</p><p>Aucun geste n’est enregistré ou transmis par cette application. Les traitements techniques de GitHub Pages sont distincts.</p>
       </div>
     </section>

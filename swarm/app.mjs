@@ -18,8 +18,8 @@ const MODE_TEXT = {
 };
 
 const PALETTES = [
-  ["101, 222, 255", "183, 135, 255"],
-  ["255, 102, 186", "253, 225, 115"]
+  ["89, 222, 255", "190, 125, 255"],
+  ["89, 222, 255", "190, 125, 255"]
 ];
 
 export function createClock() {
@@ -209,7 +209,8 @@ function pointerPosition(state, timestamp) {
     active: true,
     kind: pointer.kind,
     x: keyboard ? rect.x + pointer.x * rect.width : pointer.x - viewport.x,
-    y: keyboard ? rect.y + pointer.y * rect.height : pointer.y - viewport.y
+    y: keyboard ? rect.y + pointer.y * rect.height : pointer.y - viewport.y,
+    pressure: clamp(pointer.pressure ?? 0, 0, 1)
   };
 }
 
@@ -249,7 +250,8 @@ function bindFieldInput(rectangle, state) {
     const ry = (event.clientY - field.top) / Math.max(1, field.height) - 0.5;
     rectangle.style.setProperty("--swarm-tilt-x", (ry * -7).toFixed(2) + "deg");
     rectangle.style.setProperty("--swarm-tilt-y", (rx * 7).toFixed(2) + "deg");
-    state.pointer = {x: event.clientX, y: event.clientY, kind: touch ? "touch" : "mouse", id: event.pointerId};
+    state.pointer = {x: event.clientX, y: event.clientY, kind: touch ? "touch" : "mouse",
+      id: event.pointerId, pressure: clamp(event.pressure ?? 0, 0, 1)};
   }
 
   const resetTilt = () => { rectangle.style.setProperty("--swarm-tilt-x", "0deg"); rectangle.style.setProperty("--swarm-tilt-y", "0deg"); };
