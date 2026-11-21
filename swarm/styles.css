@@ -328,9 +328,8 @@ button:hover { background: #1f3046; }
   content: "";
 }
 
-.swatches.global::after { background: var(--violet); }
-.swatches.local::before { background: var(--rose); }
-.swatches.local::after { background: var(--yellow); }
+.swatches.cyan::before, .swatches.cyan::after { background: var(--cyan); }
+.swatches.violet::before, .swatches.violet::after { background: var(--violet); }
 
 #field-hint {
   margin: 0.55rem 0 0;

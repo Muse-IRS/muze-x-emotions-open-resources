@@ -39,3 +39,52 @@ test("bounded time and honest scientific status",()=>{
   assert.ok(html.includes("métaphore visuelle ≠ modèle scientifique"));
   assert.ok(html.includes("Apache-2.0"));
 });
+
+import {commonsPointerForce, commonsRingForce} from "../swarm/physics.mjs";
+
+test("Open Learning Commons: exactly two teams, alternating cyan/violet in both regions",()=>{
+  const globals=createParticles(20,800,500,2026);
+  const locals=createParticles(20,500,300,2027);
+  for(const group of [globals,locals]){
+    assert.deepEqual(new Set(group.map(p=>p.team)),new Set([0,1]));
+    assert.equal(group.filter(p=>p.team===0).length,10);
+    assert.equal(group.filter(p=>p.team===1).length,10);
+  }
+  assert.match(app,/\"89, 222, 255\", \"190, 125, 255\"/);
+  assert.match(html,/Essaim cyan · groupe A/);
+  assert.match(html,/Essaim violet · groupe B/);
+});
+test("Commons pointer: attraction and dispersion reverse radial direction",()=>{
+  const p={team:0,z:0.8,x:80,y:110};
+  const pointer={active:true,x:200,y:110,pressure:0.6};
+  assert.ok(commonsPointerForce(p,pointer,"attraction",700,500).x>0);
+  assert.ok(commonsPointerForce(p,pointer,"dispersion",700,500).x<0);
+  assert.deepEqual(commonsPointerForce(p,pointer,"calme",700,500),{x:0,y:0});
+  assert.deepEqual(commonsPointerForce(p,{...pointer,active:false},"vortex",700,500),{x:0,y:0});
+});
+test("Commons vortex: opposite tangential rotation of cyan vs violet",()=>{
+  const pointer={active:true,x:200,y:100,pressure:0};
+  const a=commonsPointerForce({team:0,x:100,y:100,z:0.6},pointer,"vortex",800,600);
+  const b=commonsPointerForce({team:1,x:100,y:100,z:0.6},pointer,"vortex",800,600);
+  assert.ok(a.y>0&&b.y<0);
+  assert.ok(a.x>0&&b.x>0);
+  assert.ok(Math.abs(a.y+b.y)<1e-12);
+});
+test("Commons anchor: radial correction to the ring and team-dependent spin",()=>{
+  const anchor={active:true,x:100,y:100,radius:50,strength:0.7};
+  const outer=commonsRingForce({team:0,x:200,y:100,z:0.8},anchor);
+  assert.ok(outer.x<0);
+  const inner=commonsRingForce({team:0,x:120,y:100,z:0.8},anchor);
+  assert.ok(inner.x>0);
+  const onRingA=commonsRingForce({team:0,x:151.5,y:100,z:0.8},anchor);
+  const onRingB=commonsRingForce({team:1,x:151.5,y:100,z:0.8},anchor);
+  assert.ok(onRingA.y>0&&onRingB.y<0);
+  assert.deepEqual(commonsRingForce({team:0,x:151,y:100,z:0.8},{...anchor,active:false}),{x:0,y:0});
+});
+test("Boundary: no private Lab source imported, content remains local and license is credited",()=>{
+  assert.match(html,/Swarm Field Lab d’Open Learning Commons/);
+  assert.match(html,/Deux essaims cyan et violet/);
+  assert.match(model,/Commons/);
+  assert.ok(app.includes('from "./physics.mjs"'));
+  assert.ok(!html.includes('src="https://'));
+});

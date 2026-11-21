@@ -90,6 +90,60 @@ export function forceForMode(p, target, mode, reach = 340) {
   return {x: nx * radial - ny * tangent, y: ny * radial + nx * tangent};
 }
 
+
+/*
+ * Adaptation ciblée de Swarm Field Lab / Open Learning Commons :
+ * https://github.com/Muse-IRS/muze-x-open-learning-commons/blob/7b423d9a6d415c5f84c04fa1caa037dfe169ac37/public/assets/swarm.js
+ * Origine : calcul des forces d'une ancre annulaire et des deux équipes.
+ * Apache-2.0 ; constantes conservées lorsqu'elles sont compatibles avec
+ * le moteur à pas fixe et ses limites d'accélération existantes.
+ * Pas d'automate cellulaire discret ni de modèle physique 3D.
+ */
+export function commonsPointerForce(p, pointer, mode, width, height) {
+  if (!pointer?.active || mode === "calme" || !MODES.includes(mode)) return {x: 0, y: 0};
+  const dx = pointer.x - p.x;
+  const dy = pointer.y - p.y;
+  const distance = Math.hypot(dx, dy) + 0.01;
+  const nx = dx / distance;
+  const ny = dy / distance;
+  const reach = Math.max(240, Math.min(width, height) * 0.62);
+  const falloff = clamp(1 - distance / reach, 0, 1);
+  const depthGain = 0.45 + clamp(p.z, 0, 1) * 0.75;
+  const intensity = falloff * depthGain * (1 + clamp(pointer.pressure ?? 0, 0, 1) * 0.25);
+  if (mode === "attraction") return {x: nx * 0.055 * intensity, y: ny * 0.055 * intensity};
+  if (mode === "dispersion") return {x: -nx * 0.068 * intensity, y: -ny * 0.068 * intensity};
+  const spin = p.team === 0 ? 1 : -1; // cyan : sens trigonométrique, violet : sens inverse
+  return {
+    x: (-ny * 0.082 * spin + nx * 0.008) * intensity,
+    y: (nx * 0.082 * spin + ny * 0.008) * intensity
+  };
+}
+
+export function commonsRingForce(p, anchor) {
+  if (!anchor?.active || !(anchor.radius > 0)) return {x: 0, y: 0};
+  const dx = p.x - anchor.x;
+  const dy = p.y - anchor.y;
+  const distance = Math.hypot(dx, dy) + 0.01;
+  const ux = dx / distance;
+  const uy = dy / distance;
+  const targetRadius = anchor.radius * 1.03;
+  if (distance > targetRadius * 2.45) return {x: 0, y: 0};
+  const radialError = clamp((distance - targetRadius) / Math.max(1, targetRadius), -1.1, 1.35);
+  const proximity = clamp(1 - Math.abs(distance - targetRadius) / (targetRadius * 1.45), 0, 1);
+  const strength = clamp(anchor.strength ?? 0, 0, 1.5);
+  const radialGain = (0.012 + 0.016 * proximity) * strength * (0.58 + clamp(p.z, 0, 1) * 0.5);
+  let fx = -ux * radialError * radialGain;
+  let fy = -uy * radialError * radialGain;
+  const band = clamp(1 - Math.abs(distance - targetRadius) / (targetRadius * 0.42), 0, 1);
+  if (band > 0) {
+    const spin = p.team === 0 ? 1 : -1;
+    const tangent = 0.009 * strength * band * spin;
+    fx += -uy * tangent;
+    fy += ux * tangent;
+  }
+  return {x: fx, y: fy};
+}
+
 export function createLocalBoundary(region, anchor) {
   const padX = Math.min(LIMITS.rectanglePadding, region.width / 2);
   const padY = Math.min(LIMITS.rectanglePadding, region.height / 2);
@@ -185,12 +239,18 @@ export function integrateParticle(p, env) {
     fy = (baseY - p.y) * spring + Math.sin(now * 0.00037 * p.drift + p.phase) * 0.031;
 
     if (pointer?.active) {
-      const force = forceForMode(p, pointer, mode, clamp(Math.min(width, height) * 0.65, 150, 490));
+      const force = commonsPointerForce(p, pointer, mode, width, height);
       fx += force.x;
       fy += force.y;
     }
-    const target = boundary ? boundary.circle : anchor;
-    if (target?.active && target.strength > 0) {
+    // L'ancre globale attire vers le contour, indépendamment du geste ;
+    // la population locale conserve son exclusion circulaire historique.
+    if (!boundary && anchor?.active) {
+      const force = commonsRingForce(p, anchor);
+      fx += force.x;
+      fy += force.y;
+    } else if (boundary?.circle?.active) {
+      const target = boundary.circle;
       const force = forceForMode(p, target, mode, Math.max(240, target.radius * 4.4));
       fx += force.x * target.strength;
       fy += force.y * target.strength;
