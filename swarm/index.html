@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="SWARM, simulation graphique tactile de particules : attraction, dispersion et vortex, optimisée pour tablette.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>SWARM · Tablette tactile — Muze-X Lab</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <canvas id="swarm-canvas" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <a class="skip-link" href="#atelier">Aller à l’atelier</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#accueil"><span class="brand-mark" aria-hidden="true"></span>Muze-X Lab</a>
+      <nav aria-label="Navigation principale">
+        <a href="#atelier">Atelier</a>
+        <a href="#architecture">Méthode</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell" id="accueil">
+    <section class="intro" aria-labelledby="titre">
+      <h1 id="titre">SWARM<span>.</span></h1>
+      <p>Attraction, dispersion et vortex : un champ de particules à explorer par le geste sur tablette.</p>
+    </section>
+
+    <section class="atelier" id="atelier" tabindex="-1" aria-labelledby="atelier-title">
+      <div class="toolbar">
+        <h2 id="atelier-title">Atelier</h2>
+        <div id="swarm-controls" class="toolbar-controls" hidden>
+          <div class="modes" role="group" aria-label="Mouvement des particules">
+            <button type="button" data-mode="attraction" aria-pressed="true">Attraction</button>
+            <button type="button" data-mode="dispersion" aria-pressed="false">Dispersion</button>
+            <button type="button" data-mode="vortex" aria-pressed="false">Vortex</button>
+            <button type="button" data-mode="calme" aria-pressed="false">Calme</button>
+          </div>
+          <div class="view-actions">
+            <button id="pause-field" type="button">Mettre en pause</button>
+            <button id="swarm-screen" type="button" aria-controls="geometry" aria-expanded="false">Plein écran</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="geometry" id="geometry" data-swarm-boundary="rectangle" role="region"
+           aria-label="Champ de particules : attraction, dispersion et vortex">
+        <a class="orb" id="swarm-anchor" data-swarm-anchor href="#architecture"><span class="orb-kicker">APPRENDRE</span><strong>Open Learning</strong><span>SWARM · exploration ↗</span></a>
+        <div class="swarm-markers" aria-hidden="true">
+          <span class="swarm-marker pos-1"><small>01</small><strong>PRIME</strong></span>
+          <span class="swarm-marker pos-2"><small>02</small><strong>LOG</strong></span>
+          <span class="swarm-marker pos-3"><small>03</small><strong>MOD</strong></span>
+          <span class="swarm-marker pos-4"><small>04</small><strong>BOOL</strong></span>
+          <span class="swarm-marker pos-5"><small>05</small><strong>SHANNON</strong></span>
+          <span class="swarm-marker pos-6"><small>06</small><strong>HASH</strong></span>
+          <span class="swarm-marker pos-7"><small>07</small><strong>CRYPTO</strong></span>
+        </div>
+      </div>
+
+      <div class="field-info">
+        <p id="swarm-status" role="status">L’animation nécessite JavaScript et Canvas 2D. La méthode est accessible dans le cercle.</p>
+        <ul class="legend" aria-label="Couleurs des essaims">
+          <li><span class="swatches global" aria-hidden="true"></span>Globaux</li>
+          <li><span class="swatches local" aria-hidden="true"></span>Locaux</li>
+        </ul>
+      </div>
+      <p id="field-hint" hidden>Dans le rectangle, touchez et glissez pour agir sur le champ. Au clavier, utilisez Tab puis les flèches et Échap pour annuler le point.</p>
+    </section>
+
+    <section class="method" id="architecture" tabindex="-1" aria-labelledby="method-title">
+      <h2 id="method-title">Méthode</h2>
+      <div>
+        <p>Le champ met à jour des positions et des vitesses à valeurs continues sous l’effet de forces locales. Dans un automate cellulaire, chaque cellule d’une grille prend un état discret qui évolue par pas de temps selon des règles de voisinage.</p>
+        <p>Les gestes agissent uniquement sur une simulation locale. La profondeur est perceptive (Canvas 2D, lumière et perspective CSS), pas un modèle physique 3D. Les sept repères PRIME à CRYPTO sont décoratifs : aucun moteur financier, cryptographique ou Number Lab n’est publié ici.</p><p>Aucun geste n’est enregistré ou transmis par cette application. Les traitements techniques de GitHub Pages sont distincts.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">Muze-X v4 · R&D exploratoire — métaphore visuelle ≠ modèle scientifique · <a href="../LICENSE">Apache-2.0</a> · <a href="../privacy.html">Confidentialité</a></footer>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
