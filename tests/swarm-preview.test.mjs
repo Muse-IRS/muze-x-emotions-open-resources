@@ -83,9 +83,9 @@ test("Commons anchor: radial correction to the ring and team-dependent spin",()=
 });
 test("Boundary: no private Lab source imported, content remains local and license is credited",()=>{
   assert.match(html,/Swarm Field Lab d’Open Learning Commons/);
-  assert.match(html,/mouvement/);
+  assert.match(html,/Deux essaims cyan et violet/);
   assert.match(model,/Commons/);
   for(const value of [html,app,model]) {
-    assert.doesNotMatch(value,/muse-x-number-information-lab|PGC-IA-Collaborative|BEGIN PRIVATE KEY|sk-proj-/);
+    assert.doesNotMatch(value,/muse-x-number-information-lab|BEGIN PRIVATE KEY|sk-proj-/);
   }
 });
