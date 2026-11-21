@@ -1,0 +1,25 @@
+name: Validate isolated SWARM tablet preview
+on:
+  pull_request:
+    paths:
+      - 'swarm/**'
+      - 'tests/swarm-preview.test.mjs'
+      - '.github/workflows/test-swarm-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate SWARM-only files
+        run: |
+          node --check swarm/physics.mjs
+          node --check swarm/app.mjs
+          node --test tests/swarm-preview.test.mjs
+      - name: Validate public boundary
+        run: python3 scripts/validate_public.py
